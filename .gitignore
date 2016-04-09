@@ -2,8 +2,10 @@
 .idea
 output
 lib
-build
-.gradle
-gradle/wrapper
 
+## Gradle
+
+.gradle
+gradle-app.setting
+build/
 
