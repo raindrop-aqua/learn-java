@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.p01;
 
 import com.practice.pb.AddressBookProto.Person;
 
@@ -10,7 +10,9 @@ import java.io.IOException;
 public class WriteAndRead {
 
     public static void main(String[] args) {
-        Person john = Person.newBuilder()
+
+        Person.Builder builder = Person.newBuilder();
+        Person john = builder
                 .setId(1234)
                 .setName("鈴木 太郎")
                 .setEmail("john@practice.com")
@@ -19,6 +21,16 @@ public class WriteAndRead {
                                 .setNumber("555-1234")
                                 .setType(Person.PhoneType.HOME))
                 .build();
+// or
+//        Person john = Person.newBuilder()
+//                .setId(1234)
+//                .setName("鈴木 太郎")
+//                .setEmail("john@practice.com")
+//                .addPhone(
+//                        Person.PhoneNumber.newBuilder()
+//                                .setNumber("555-1234")
+//                                .setType(Person.PhoneType.HOME))
+//                .build();
 
         try {
             File f = new File("john.dat");
