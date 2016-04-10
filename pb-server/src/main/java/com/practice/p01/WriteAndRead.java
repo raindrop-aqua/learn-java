@@ -1,6 +1,6 @@
 package com.practice.p01;
 
-import com.practice.pb.AddressBookProto.Person;
+import com.practice.pb.Person;
 
 import java.io.File;
 import java.io.FileInputStream;

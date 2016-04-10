@@ -1,6 +1,6 @@
 package com.practice.p02;
 
-import com.practice.pb.AddressBookProto.Person;
+import com.practice.pb.Person;
 
 import java.io.IOException;
 import java.io.OutputStream;
