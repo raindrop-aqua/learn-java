@@ -1,5 +1,9 @@
-option java_package = "com.practice.pb";
+syntax = "proto3";
 
+package com.practice;
+
+option optimize_for = SPEED;
+option java_package = "com.practice.pb";
 option java_outer_classname = "AddressBookProto";
 
 service AddressBookService {
@@ -8,18 +12,18 @@ service AddressBookService {
 }
 
 message AddressBookRequest {
-    required int32 id = 1;
+    int32 id = 1;
 }
 
 message AddressBookResponse {
-    required Person person = 1;
+    Person person = 1;
 }
 
 
 message Person {
-    required string name = 1;
-    required int32 id = 2;
-    optional string email = 3;
+    string name = 1;
+    int32 id = 2;
+    string email = 3;
 
     enum PhoneType {
         MOBILE = 0;
@@ -28,8 +32,8 @@ message Person {
     }
 
     message PhoneNumber {
-        required string number = 1;
-        optional PhoneType type = 2 [default = HOME];
+        string number = 1;
+        PhoneType type = 2;
     }
     repeated PhoneNumber phone = 4;
 }
