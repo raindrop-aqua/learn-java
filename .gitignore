@@ -9,3 +9,4 @@ lib
 gradle-app.setting
 build/
 
+*.exe
