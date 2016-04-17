@@ -8,4 +8,5 @@
 * Server/Client クライアントでシリアライズしたものを、サーバに送信しデシリアライズ
 
 === p03
-* Server/Client gRPC
+* Server/Client gRPC +
+環境設定 http://qiita.com/y-okubo/items/8e517aba293af43b2ce5[参考]

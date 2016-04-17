@@ -20,6 +20,11 @@ import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
 
+import (
+	context "golang.org/x/net/context"
+	grpc "google.golang.org/grpc"
+)
+
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
 var _ = fmt.Errorf
@@ -130,6 +135,71 @@ func init() {
 	proto.RegisterType((*Person_PhoneNumber)(nil), "com.practice.Person.PhoneNumber")
 	proto.RegisterType((*AddressBook)(nil), "com.practice.AddressBook")
 	proto.RegisterEnum("com.practice.Person_PhoneType", Person_PhoneType_name, Person_PhoneType_value)
+}
+
+// Reference imports to suppress errors if they are not otherwise used.
+var _ context.Context
+var _ grpc.ClientConn
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+const _ = grpc.SupportPackageIsVersion1
+
+// Client API for AddressBookService service
+
+type AddressBookServiceClient interface {
+	Query(ctx context.Context, in *AddressBookRequest, opts ...grpc.CallOption) (*AddressBookResponse, error)
+}
+
+type addressBookServiceClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewAddressBookServiceClient(cc *grpc.ClientConn) AddressBookServiceClient {
+	return &addressBookServiceClient{cc}
+}
+
+func (c *addressBookServiceClient) Query(ctx context.Context, in *AddressBookRequest, opts ...grpc.CallOption) (*AddressBookResponse, error) {
+	out := new(AddressBookResponse)
+	err := grpc.Invoke(ctx, "/com.practice.AddressBookService/query", in, out, c.cc, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// Server API for AddressBookService service
+
+type AddressBookServiceServer interface {
+	Query(context.Context, *AddressBookRequest) (*AddressBookResponse, error)
+}
+
+func RegisterAddressBookServiceServer(s *grpc.Server, srv AddressBookServiceServer) {
+	s.RegisterService(&_AddressBookService_serviceDesc, srv)
+}
+
+func _AddressBookService_Query_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error) (interface{}, error) {
+	in := new(AddressBookRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	out, err := srv.(AddressBookServiceServer).Query(ctx, in)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+var _AddressBookService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "com.practice.AddressBookService",
+	HandlerType: (*AddressBookServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "query",
+			Handler:    _AddressBookService_Query_Handler,
+		},
+	},
+	Streams: []grpc.StreamDesc{},
 }
 
 var fileDescriptor0 = []byte{
