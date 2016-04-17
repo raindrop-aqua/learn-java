@@ -11,21 +11,16 @@ import org.apache.thrift.transport.TTransportException;
 public class Client {
 
     public static void main(String[] args) {
-        TTransport transport;
-        transport = new TSocket("localhost", 8080);
-        try {
-            transport.open();
 
+        try (TTransport transport = new TSocket("localhost", 8080)) {
             TProtocol protocol = new TBinaryProtocol(transport);
             Calc.Client client = new Calc.Client(protocol);
 
+            transport.open();
             perform(client);
-        } catch (TTransportException e) {
-            e.printStackTrace();
+
         } catch (TException e) {
             e.printStackTrace();
-        } finally {
-            transport.close();
         }
     }
 
