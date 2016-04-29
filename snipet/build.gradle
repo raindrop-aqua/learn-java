@@ -3,12 +3,14 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile 'org.apache.commons:commons-lang3:3.4',
+            'org.jetbrains.kotlin:kotlin-maven-plugin:1.0.1-2'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
