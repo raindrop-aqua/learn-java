@@ -10,7 +10,7 @@ public class Mom {
     public static void main(String[] args) {
 
 
-        ExecutorService service = Executors.newFixedThreadPool(2);
+        ExecutorService service = Executors.newCachedThreadPool();
         List<Future<String>> list = new ArrayList<>();
 
         for (String task : taskList) {
@@ -24,5 +24,6 @@ public class Mom {
                 e.printStackTrace();
             }
         }
+        service.shutdown();
     }
 }
