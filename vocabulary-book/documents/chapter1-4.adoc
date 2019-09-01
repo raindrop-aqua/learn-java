@@ -8,7 +8,7 @@
 [source,java]
 .Main.java
 ----
-include::../projects/chapter1/src/main/java/com/example/vocabularybook/Main.java[]
+include::../projects/chapter1/src/main/java/com/example/vocabularybook/chapter1/Main.java[]
 ----
 <1> 単語帳は指定されている語句を配列で宣言しておきます。配列はコード実行中に要素を追加することができません。
 <2> 繰返し文は条件が満たされない（false）のときに繰返しを終了します。ずっと繰返しをしたいときはこのように記述します。

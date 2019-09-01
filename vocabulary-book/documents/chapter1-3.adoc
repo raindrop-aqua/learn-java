@@ -8,21 +8,21 @@
 
 [source,java,indent=0]
 ----
-include::../projects/chapter1/src/main/java/com/example/vocabularybook/hint/Hint1.java[lines=7..10]
+include::../projects/chapter1/src/main/java/com/example/vocabularybook/chapter1/hints/Hint1.java[lines=7..10]
 ----
 
 === 何も入力せずにエンターキーを押したらアプリ終了
 
 [source,java,indent=0]
 ----
-include::../projects/chapter1/src/main/java/com/example/vocabularybook/hint/Hint2.java[lines=7..14]
+include::../projects/chapter1/src/main/java/com/example/vocabularybook/chapter1/hints/Hint2.java[lines=7..14]
 ----
 
 === 画面への表示
 
 [source,java,indent=0]
 ----
-include::../projects/chapter1/src/main/java/com/example/vocabularybook/hint/Hint3.java[lines=7..8]
+include::../projects/chapter1/src/main/java/com/example/vocabularybook/chapter1/hints/Hint3.java[lines=7..8]
 ----
 
 === 今日のショートカット（Eclipse）
