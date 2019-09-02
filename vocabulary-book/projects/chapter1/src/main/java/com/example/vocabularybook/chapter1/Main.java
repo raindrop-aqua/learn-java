@@ -30,7 +30,7 @@ public class Main {
                         break;
                     }
                 }
-                // 入力した単語と翻訳した語句をセットで出力<6>
+                // 入力した単語と翻訳単語をセットで出力<6>
                 System.out.println(String.format("%s -> %s", command, translated));
             }
         }

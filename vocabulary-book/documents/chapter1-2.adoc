@@ -1,4 +1,4 @@
-:toc:
+:toc: left
 :source-highlighter: coderay
 :experimental:
 
@@ -10,16 +10,16 @@
 * 処理フロー
 . コンソールで単語を入力
 . エンターキーを押す
-. 画面に翻訳語を表示
+. 画面に翻訳単語を表示
 * 何も入力せずにエンターキーを押したらアプリ終了
 * 表示形式
-** 単語が見つかった場合：入力した単語 -> 翻訳語
+** 単語が見つかった場合：入力した単語 -> 翻訳単語
 ** 単語が見つからない場合：入力した単語 -> 登録されていません
 ====
 
 .単語帳へ登録する単語のまとめ
 |===
-|単語|翻訳
+|単語|翻訳単語
 
 |apple
 |りんご
@@ -51,6 +51,7 @@
 === フローチャート（アクティビティー図）
 
 処理の流れを整理するために図で考えることは重要なことです。
+最近はフローチャートを書くことも少ないかもしれませんが、図を書くことで気がつくこともあります。
 
 [plantuml]
 ----
@@ -63,12 +64,12 @@ repeat
         partition 単語帳の検索処理 {
             while (すべての単語を調べた？) is (no)
                 if (単語が見つかった) then (yes)
-                    :翻訳語を設定;
+                    :翻訳単語を変数に設定;
                     break
                 else (no)
                 endif
             end while(yes)
-            :「翻訳語」または「登録されていません」を表示;
+            :「翻訳単語」または「登録されていません」を表示;
         }
     endif
 repeatwhile
@@ -79,12 +80,12 @@ repeatwhile
 
 さて、いよいよコーディングを始めてみましょう。 引っかかると思われるポイントにヒントを出してみました。
 
-* link:chapter1-3.adoc[Chapter 1-3 コーディングのヒント]
+* link:chapter1-3.html[Chapter 1-3 コーディングのヒント]
 
 === リンク
 
-* link:chapter1-1.adoc[Chapter 1-1 はじめてのアプリ]
-* link:chapter1-2.adoc[Chapter 1-2 設計のヒント]
-* link:chapter1-3.adoc[Chapter 1-3 コーディングのヒント]
-* link:chapter1-4.adoc[Chapter 1-4 コーディング例]
+* link:chapter1-1.html[Chapter 1-1 はじめてのアプリ]
+* link:chapter1-2.html[Chapter 1-2 設計のヒント]
+* link:chapter1-3.html[Chapter 1-3 コーディングのヒント]
+* link:chapter1-4.html[Chapter 1-4 コーディング例]
 

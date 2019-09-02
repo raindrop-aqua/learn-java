@@ -1,4 +1,4 @@
-:toc:
+:toc: left
 :source-highlighter: coderay
 :experimental:
 
@@ -19,8 +19,7 @@ include::../projects/chapter1/src/main/java/com/example/vocabularybook/chapter1/
 
 === 次のチャプターでは…
 
-次のセクションでは、コーディング例を示します。
-自分がコーディングした内容と比較してみましょう。
+今回作成したアプリに機能を追加します。
 
-* link:chapter2.adoc[Chapter 2 単語登録機能を追加する]
+* link:chapter2-1.html[Chapter 2 単語登録機能を追加する]
 

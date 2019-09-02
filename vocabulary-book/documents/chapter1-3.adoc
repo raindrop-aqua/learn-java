@@ -1,10 +1,40 @@
-:toc:
+:toc: left
 :source-highlighter: coderay
 :experimental:
 
 == Chapter 1-3 コーディングのヒント
 
-=== コンソールから文字を入力
+=== 単語の保持には配列を使う
+単語の数は増減しないため、単語を保持には配列を使いましょう。
+一つのレコードの中には単語と翻訳語を入れるため、２次元配列になります。
+
+.配列イメージ
+|===
+|レコード番号|0|1
+
+|0
+|apple
+|りんご
+
+|1
+|orange
+|みかん
+
+|2
+|house
+|家
+
+|3
+|cat
+|ネコ
+|===
+
+[source,java,indent=0]
+----
+include::../projects/chapter1/src/main/java/com/example/vocabularybook/chapter1/hints/Hint4.java[lines=5..8]
+----
+
+=== コンソールから文字を入力するときは？
 
 [source,java,indent=0]
 ----
@@ -49,12 +79,12 @@ include::../projects/chapter1/src/main/java/com/example/vocabularybook/chapter1/
 次のセクションでは、コーディング例を示します。
 自分がコーディングした内容と比較してみましょう。
 
-* link:chapter1-4.adoc[Chapter 1-4 コーディング例]
+* link:chapter1-4.html[Chapter 1-4 コーディング例]
 
 === リンク
 
-* link:chapter1-1.adoc[Chapter 1-1 はじめてのアプリ]
-* link:chapter1-2.adoc[Chapter 1-2 設計のヒント]
-* link:chapter1-3.adoc[Chapter 1-3 コーディングのヒント]
-* link:chapter1-4.adoc[Chapter 1-4 コーディング例]
+* link:chapter1-1.html[Chapter 1-1 はじめてのアプリ]
+* link:chapter1-2.html[Chapter 1-2 設計のヒント]
+* link:chapter1-3.html[Chapter 1-3 コーディングのヒント]
+* link:chapter1-4.html[Chapter 1-4 コーディング例]
 

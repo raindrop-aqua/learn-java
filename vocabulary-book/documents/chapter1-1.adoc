@@ -1,4 +1,4 @@
-:toc: right
+:toc: left
 :source-highlighter: coderay
 :experimental:
 
@@ -16,17 +16,19 @@
 何も単語を入力しなかったらそこでアプリを終了してください。
 単語が見つからなかったら「入力した単語 -> 登録されていません」と表示してもらおうかな。
 ====
+思いつくままのお客様のお言葉。これをかみ砕いて、整理するのもコーディングの一部ですよね。
+
+
 
 === 次のセクションでは…
 
 いきなりコーディングを始める前に、お客さんの話を理解・分解して、情報を整理するところから始めましょう。
 
-* link:chapter1-2.adoc[Chapter 1-2 設計のヒント]
+* link:chapter1-2.html[Chapter 1-2 設計のヒント]
 
 === リンク
 
-* link:chapter1-1.adoc[Chapter 1-1 はじめてのアプリ]
-* link:chapter1-2.adoc[Chapter 1-2 設計のヒント]
-* link:chapter1-3.adoc[Chapter 1-3 コーディングのヒント]
-* link:chapter1-4.adoc[Chapter 1-4 コーディング例]
-
+* link:chapter1-1.html[Chapter 1-1 はじめてのアプリ]
+* link:chapter1-2.html[Chapter 1-2 設計のヒント]
+* link:chapter1-3.html[Chapter 1-3 コーディングのヒント]
+* link:chapter1-4.html[Chapter 1-4 コーディング例]
