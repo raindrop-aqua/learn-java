@@ -1,0 +1,20 @@
+:toc:
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 1-4 コーディング例
+
+[[app-listing]]
+[source,java]
+.Main.java
+----
+include::../projects/chapter2/src/main/java/com/example/vocabularybook/chapter2/Main.java[]
+----
+
+=== 次のチャプターでは…
+
+次のセクションでは、コーディング例を示します。
+自分がコーディングした内容と比較してみましょう。
+
+* link:chapter3-1.html[Chapter 3 コードを整理する]
+
