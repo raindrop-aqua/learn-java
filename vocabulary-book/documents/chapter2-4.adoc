@@ -2,7 +2,7 @@
 :source-highlighter: coderay
 :experimental:
 
-== Chapter 1-4 コーディング例
+== Chapter 2-4 コーディング例
 
 [[app-listing]]
 [source,java]
@@ -13,8 +13,14 @@ include::../projects/chapter2/src/main/java/com/example/vocabularybook/chapter2/
 
 === 次のチャプターでは…
 
-次のセクションでは、コーディング例を示します。
-自分がコーディングした内容と比較してみましょう。
+機能がいくつか追加され、だんだん複雑になってきました。
+次のチャプターでは機能追加は一旦お休みして、これまでのコードを整理することにしましょう。
 
 * link:chapter3-1.html[Chapter 3 コードを整理する]
 
+=== リンク
+
+* link:chapter2-1.html[Chapter 2-1 (機能追加)単語を登録・削除する機能を追加]
+* link:chapter2-2.html[Chapter 2-2 設計のヒント]
+* link:chapter2-3.html[Chapter 2-3 コーディングのヒント]
+* link:chapter2-4.html[Chapter 2-4 コーディング例]

@@ -26,9 +26,11 @@ public class Main {
                             String translatedWord = memory.get(queryWord);
 
                             if (translatedWord == null) {
-                                System.out.println(String.format("%s -> %s", queryWord, "登録されていません"));
+                                System.out.println(String.format("%s -> %s",
+                                        queryWord, "登録されていません"));
                             } else {
-                                System.out.println(String.format("%s -> %s", queryWord, translatedWord));
+                                System.out.println(String.format("%s -> %s",
+                                        queryWord, translatedWord));
                             }
                             break;
                         case "A":
