@@ -18,13 +18,15 @@ public class Main {
                     break;
                 }
 
+                // コマンドをスペースで分解する<1>
                 String[] parsedCommand = command.split(" ");
                 try {
+                    // １つ目が実行する処理
                     switch (parsedCommand[0].toUpperCase()) {
                         case "T":
                             String queryWord = parsedCommand[1];
                             String translatedWord = memory.get(queryWord);
-
+                            // Mapに入っていない場合はNULLが返却される<2>
                             if (translatedWord == null) {
                                 System.out.println(String.format("%s -> %s",
                                         queryWord, "登録されていません"));
@@ -36,7 +38,7 @@ public class Main {
                         case "A":
                             String newWord = parsedCommand[1];
                             String newTranslatedWord = parsedCommand[2];
-                            // 追加前に単語を削除
+                            // 追加前に単語を削除<3>
                             memory.remove(newWord);
                             // 単語を追加
                             memory.put(newWord, newTranslatedWord);
@@ -53,7 +55,7 @@ public class Main {
                             break;
                     }
                 } catch (Exception e) {
-                    // コマンドにミスがあったとき
+                    // コマンドにミスがあったとき<4>
                     System.out.println("よくわかりませんでした");
                 }
             }
