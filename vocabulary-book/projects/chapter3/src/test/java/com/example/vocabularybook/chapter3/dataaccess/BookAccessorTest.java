@@ -9,21 +9,21 @@ import static org.junit.Assert.*;
 public class BookAccessorTest {
 
     /**
-     * 登録した単語の翻訳を行う
+     * 登録した単語の探索を行う
      */
     @Test
     public void bookTest01() {
         BookAccessor book = new BookOnMemoryImpl();
         book.delete("apple");
         book.add("apple", "りんご");
-        // 追加した単語を翻訳する
-        String translated = book.findBy("apple");
+        // 追加した単語を探索する
+        String lookup = book.findBy("apple");
 
-        assertThat(translated, is("りんご"));
+        assertThat(lookup, is("りんご"));
     }
 
     /**
-     * 削除した単語の翻訳を試みる
+     * 削除した単語の探索を試みる
      */
     @Test
     public void bookTest02() {
@@ -32,14 +32,14 @@ public class BookAccessorTest {
         book.add("apple", "りんご");
         // 追加した単語を削除
         book.delete("apple");
-        // 削除した単語を翻訳する
-        String translated = book.findBy("apple");
+        // 削除した単語を探索する
+        String lookup = book.findBy("apple");
 
-        assertThat(translated, nullValue());
+        assertThat(lookup, nullValue());
     }
 
     /**
-     * インスタンスを破棄した後、翻訳を試みる
+     * インスタンスを破棄した後、探索を試みる
      */
     @Test
     public void bookTest03() {
@@ -48,8 +48,8 @@ public class BookAccessorTest {
         book.add("apple", "りんご");
         // 再度インスタンスを生成（前のインスタンスは破棄される）
         book = new BookOnMemoryImpl();
-        String translated = book.findBy("apple");
+        String lookup = book.findBy("apple");
         // メモリ上に登録された単語はインスタンスが破棄されると消えてしまうことを確認する
-        assertThat(translated, nullValue());
+        assertThat(lookup, nullValue());
     }
 }
