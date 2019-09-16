@@ -4,7 +4,6 @@ package com.example.vocabularybook.chapter3.dataaccess;
  * 単語帳データへのアクセサ
  */
 public interface BookAccessor {
-
     /**
      * 語句を指定して翻訳語を探す
      *

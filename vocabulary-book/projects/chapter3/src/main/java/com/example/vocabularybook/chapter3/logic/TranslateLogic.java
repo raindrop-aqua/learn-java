@@ -7,7 +7,6 @@ import com.example.vocabularybook.chapter3.dto.TranslateLogicOutDTO;
  * 翻訳ロジック
  */
 public interface TranslateLogic {
-
     /**
      * 翻訳を行う
      *
