@@ -8,6 +8,9 @@ import static org.junit.Assert.*;
 
 public class BookAccessorTest {
 
+    /**
+     * 登録した単語の翻訳を行う
+     */
     @Test
     public void bookTest01() {
         BookAccessor book = new BookOnMemoryImpl();
@@ -19,6 +22,9 @@ public class BookAccessorTest {
         assertThat(translated, is("りんご"));
     }
 
+    /**
+     * 削除した単語の翻訳を試みる
+     */
     @Test
     public void bookTest02() {
         BookAccessor book = new BookOnMemoryImpl();
@@ -32,6 +38,9 @@ public class BookAccessorTest {
         assertThat(translated, nullValue());
     }
 
+    /**
+     * インスタンスを破棄した後、翻訳を試みる
+     */
     @Test
     public void bookTest03() {
         BookAccessor book = new BookOnMemoryImpl();

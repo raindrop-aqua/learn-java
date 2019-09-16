@@ -9,6 +9,9 @@ import static org.junit.Assert.*;
 
 public class TranslateLogicTest {
 
+    /**
+     * 単語を登録して翻訳を行う
+     */
     @Test
     public void executeTest01() {
         TranslateLogic service = new TranslateLogicImpl();
@@ -30,6 +33,11 @@ public class TranslateLogicTest {
         output = service.execute(input);
         assertThat(output.isTerminate(), is(true));
     }
+
+    /**
+     * 単語の上書きを行う<br>
+     * 単語を削除した後、翻訳する
+     */
     @Test
     public void executeTest02() {
         TranslateLogic service = new TranslateLogicImpl();
@@ -59,7 +67,7 @@ public class TranslateLogicTest {
         assertThat(output.getMessage(), is("apple -> 林檎"));
         assertThat(output.isTerminate(), is(false));
 
-        // appleの翻訳語を上書きする
+        // appleの翻訳語を削除する
         input = new TranslateLogicInDTO();
         input.setCommand("d apple");
         output = service.execute(input);
@@ -73,6 +81,9 @@ public class TranslateLogicTest {
         assertThat(output.isTerminate(), is(false));
     }
 
+    /**
+     * インスタンスを破棄した後、翻訳を行う
+     */
     @Test
     public void executeTest03() {
         TranslateLogic service = new TranslateLogicImpl();
@@ -99,6 +110,9 @@ public class TranslateLogicTest {
         assertThat(output.isTerminate(), is(false));
     }
 
+    /**
+     * 想定外のコマンドの実行を試みる
+     */
     @Test
     public void executeTest04() {
         TranslateLogic service = new TranslateLogicImpl();
