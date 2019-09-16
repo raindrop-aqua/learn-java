@@ -21,7 +21,7 @@ include::../projects/chapter1/src/main/java/com/example/vocabularybook/chapter1/
 
 今回作成したアプリに機能を追加します。
 
-* link:chapter2-1.html[Chapter 2 単語登録機能を追加する]
+* link:chapter2-1.html[Chapter 2 (機能追加)単語を登録・削除する機能を追加]
 
 === リンク
 
