@@ -4,10 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 単語帳実装
+ * 単語帳データへのアクセサ実装
  */
 public class BookOnMemoryImpl implements BookAccessor {
 
+    /** 単語格納場所 */
     private Map<String, String> memory = new HashMap<String, String>();
 
     @Override

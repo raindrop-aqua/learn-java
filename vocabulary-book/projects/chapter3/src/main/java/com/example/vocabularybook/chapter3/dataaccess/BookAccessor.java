@@ -1,7 +1,7 @@
 package com.example.vocabularybook.chapter3.dataaccess;
 
 /**
- * 単語帳
+ * 単語帳データへのアクセサ
  */
 public interface BookAccessor {
 
