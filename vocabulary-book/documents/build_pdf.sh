@@ -7,10 +7,10 @@ asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/ch
 asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter1-3.pdf chapter1-3.adoc
 asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter1-4.pdf chapter1-4.adoc
 
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter2-1.pdf chapter2-1.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter2-2.pdf chapter2-2.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter2-3.pdf chapter2-3.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter2-4.pdf chapter2-4.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter2-1.pdf chapter2-1.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter2-2.pdf chapter2-2.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter2-3.pdf chapter2-3.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter2-4.pdf chapter2-4.adoc
 
 #asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter3-1.pdf chapter3-1.adoc
 #asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter3-2.pdf chapter3-2.adoc
