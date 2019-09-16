@@ -1,4 +1,4 @@
-:toc: right
+:toc: left
 :source-highlighter: coderay
 :experimental:
 

@@ -1,8 +1,8 @@
-:toc:
+:toc: left
 :source-highlighter: coderay
 :experimental:
 
-== Chapter 1-2 設計のヒント
+== Chapter 2-2 設計のヒント
 
 === 仕様の分解
 
@@ -112,7 +112,7 @@ repeatwhile
 
 さて、今回は単語を登録する機能が加わります。配列は
 
-* link:chapter2-2.html[Chapter 2-3 コーディングのヒント]
+* link:chapter2-3.html[Chapter 2-3 コーディングのヒント]
 
 === リンク
 
