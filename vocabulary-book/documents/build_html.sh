@@ -11,10 +11,14 @@ asciidoctor -r asciidoctor-diagram -o build/chapter2-2.html chapter2-2.adoc
 asciidoctor -r asciidoctor-diagram -o build/chapter2-3.html chapter2-3.adoc
 asciidoctor -r asciidoctor-diagram -o build/chapter2-4.html chapter2-4.adoc
 
-#asciidoctor -r asciidoctor-diagram -o build/chapter3-1.html chapter3-1.adoc
-#asciidoctor -r asciidoctor-diagram -o build/chapter3-2.html chapter3-2.adoc
-#asciidoctor -r asciidoctor-diagram -o build/chapter3-3.html chapter3-3.adoc
-#asciidoctor -r asciidoctor-diagram -o build/chapter3-4.html chapter3-4.adoc
+asciidoctor -r asciidoctor-diagram -o build/chapter3-1.html chapter3-1.adoc
+asciidoctor -r asciidoctor-diagram -o build/chapter3-2.html chapter3-2.adoc
+asciidoctor -r asciidoctor-diagram -o build/chapter3-3.html chapter3-3.adoc
+asciidoctor -r asciidoctor-diagram -o build/chapter3-4.html chapter3-4.adoc
+asciidoctor -r asciidoctor-diagram -o build/chapter3-5.html chapter3-5.adoc
+asciidoctor -r asciidoctor-diagram -o build/chapter3-6.html chapter3-6.adoc
+asciidoctor -r asciidoctor-diagram -o build/chapter3-7.html chapter3-7.adoc
+asciidoctor -r asciidoctor-diagram -o build/chapter3-8.html chapter3-8.adoc
 
 #asciidoctor -r asciidoctor-diagram -o build/chapter4-1.html chapter4-1.adoc
 #asciidoctor -r asciidoctor-diagram -o build/chapter4-2.html chapter4-2.adoc

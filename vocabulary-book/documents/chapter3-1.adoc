@@ -1,0 +1,37 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 3-1 コードを整理する
+
+=== 今回やること
+前回までで単語帳の基本的な機能を実装することができました。
+１つのクラス内にコードを押し込めていたため、だいぶ見通しが悪くなってきました。
+機能追加をストップして、コードを整理することにしましょう。
+
+このチャプターでは以下のように４つのパートを通して学習を進めていきます。
+
+====
+* コードの整理方針を決定する
+* インターフェイスを作成する
+* インターフェイスに対してコーディングを行う
+* テストの手法を学び、テストを実装する
+====
+
+
+=== 次のセクションでは…
+
+コードを整理するためには、どんな視点が必要かを考えてみましょう。
+
+* link:chapter3-2.html[Chapter 3-2 整理の方針]
+
+=== リンク
+
+* link:chapter3-1.html[Chapter 3-1 コードを整理する]
+* link:chapter3-2.html[Chapter 3-2 整理の方針]
+* link:chapter3-3.html[Chapter 3-3 インターフェイスの設計]
+* link:chapter3-4.html[Chapter 3-4 インターフェイスコーディング例]
+* link:chapter3-5.html[Chapter 3-5 インターフェイスを実装する]
+* link:chapter3-6.html[Chapter 3-6 コーディング例]
+* link:chapter3-7.html[Chapter 3-7 テストの作成]
+* link:chapter3-8.html[Chapter 3-8 テストコーディング例]

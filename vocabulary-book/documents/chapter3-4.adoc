@@ -1,0 +1,50 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 3-4 インターフェイスのコーディング例
+
+=== ビジネスロジックインターフェイス
+
+.TranslateLogic.java
+[source,java,indent=0]
+----
+include::../projects/chapter3/src/main/java/com/example/vocabularybook/chapter3/logic/TranslateLogic.java[]
+----
+
+.TranslateLogicInDTO.java
+[source,java,indent=0]
+----
+include::../projects/chapter3/src/main/java/com/example/vocabularybook/chapter3/dto/TranslateLogicInDTO.java[]
+----
+
+.TranslateLogicOutDTO.java
+[source,java,indent=0]
+----
+include::../projects/chapter3/src/main/java/com/example/vocabularybook/chapter3/dto/TranslateLogicOutDTO.java[]
+----
+
+==== データアクセスインターフェイス
+
+.BookAccessor.java
+[source,java,indent=0]
+----
+include::../projects/chapter3/src/main/java/com/example/vocabularybook/chapter3/dataaccess/BookAccessor.java[]
+----
+
+=== 次のセクションでは…
+
+次のセクションでは、インターフェイスを実装していきます。
+
+* link:chapter3-5.html[Chapter 3-5 インターフェイスを実装する]
+
+=== リンク
+
+* link:chapter3-1.html[Chapter 3-1 コードを整理する]
+* link:chapter3-2.html[Chapter 3-2 整理の方針]
+* link:chapter3-3.html[Chapter 3-3 インターフェイスの設計]
+* link:chapter3-4.html[Chapter 3-4 インターフェイスコーディング例]
+* link:chapter3-5.html[Chapter 3-5 インターフェイスを実装する]
+* link:chapter3-6.html[Chapter 3-6 コーディング例]
+* link:chapter3-7.html[Chapter 3-7 テストの作成]
+* link:chapter3-8.html[Chapter 3-8 テストコーディング例]

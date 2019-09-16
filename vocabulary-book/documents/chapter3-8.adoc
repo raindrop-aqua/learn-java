@@ -1,0 +1,44 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 3-8 テストコーディング例
+
+=== ロジックインターフェイス
+
+.TranslateLogicTest.java
+[source,java,indent=0]
+----
+include::../projects/chapter3/src/test/java/com/example/vocabularybook/chapter3/logic/TranslateLogicTest.java[]
+----
+
+
+=== データアクセスインターフェイス
+
+.BookAccessorTest.java
+[source,java,indent=0]
+----
+include::../projects/chapter3/src/test/java/com/example/vocabularybook/chapter3/dataaccess/BookAccessorTest.java[]
+----
+
+
+=== 次のチャプターでは…
+
+やっとコードの整理が終わりました。長いチャプターお疲れさまでした。
+次はまた機能追加に戻ります。
+
+アプリケーションの根幹に関わる機能追加ですが、 部分的な変更で機能追加できます。
+コードの整理の重要さを感じてもらえると思います。
+
+* link:chapter4-1.html[Chapter 4 (機能追加)ファイルに保存する機能を追加]
+
+=== リンク
+
+* link:chapter3-1.html[Chapter 3-1 コードを整理する]
+* link:chapter3-2.html[Chapter 3-2 整理の方針]
+* link:chapter3-3.html[Chapter 3-3 インターフェイスの設計]
+* link:chapter3-4.html[Chapter 3-4 インターフェイスコーディング例]
+* link:chapter3-5.html[Chapter 3-5 インターフェイスを実装する]
+* link:chapter3-6.html[Chapter 3-6 コーディング例]
+* link:chapter3-7.html[Chapter 3-7 テストの作成]
+* link:chapter3-8.html[Chapter 3-8 テストコーディング例]

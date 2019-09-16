@@ -1,0 +1,61 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 3-5 インターフェイスを実装する
+
+=== データアクセス
+
+* クラスの名前は「BookOnMemoryImpl」とし「BookAccessor」を実装する
+
+* メンバー変数には以前の演習と同じように、単語を格納するMapを宣言する。
+  クラスの外からアクセスされないようにprivateアクセス識別子を付加しておく。
+
+=== ビジネスロジック
+
+* クラスの名前は「TranslateLogicImpl」とし「TranslateLogic」を実装する
+
+* ビジネスロジックの責務は２つ。
+** コマンドの解析
+** 適切にデータアクセスを呼び出すこと。
+
+* コマンドの解析は前回の演習のものがほとんどそのまま利用できるが、終了コマンドを入力されたときのことを考え直す。
+
+* メンバ変数にデータアクセスをprivateで宣言してインスタンスを生成しておく。
+メソッドを呼び出すたびにインスタンスを生成するといつまでたっても単語が登録されない。
+
+=== 今日のショートカット（Eclipse）
+
+.今日のショートカット
+|===
+|ショートカット|目的
+
+|型を選択してkbd:[F2]
+|Javadocを閲覧する
+
+|型を選択してkbd:[F3]
+|実装にジャンプする
+
+|変数を選択して、kbd:[Alt + Shift + R]
+|変数名を変更する（リファクタリング）
+
+|行を選択して、kbd:[Ctrl + Shift + O]
+|インポートを最適化する
+|===
+
+=== 次のセクションでは…
+
+インターフェイス実装コーディング例を示します。
+
+* link:chapter3-6.html[Chapter 3-6 コーディング例]
+
+=== リンク
+
+* link:chapter3-1.html[Chapter 3-1 コードを整理する]
+* link:chapter3-2.html[Chapter 3-2 整理の方針]
+* link:chapter3-3.html[Chapter 3-3 インターフェイスの設計]
+* link:chapter3-4.html[Chapter 3-4 インターフェイスコーディング例]
+* link:chapter3-5.html[Chapter 3-5 インターフェイスを実装する]
+* link:chapter3-6.html[Chapter 3-6 コーディング例]
+* link:chapter3-7.html[Chapter 3-7 テストの作成]
+* link:chapter3-8.html[Chapter 3-8 テストコーディング例]
