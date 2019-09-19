@@ -46,13 +46,13 @@
 
 ===== input
 引数のためのDTOです。
-「TranslateLoginInDTO」と名付け、
+「TranslateLogicInDTO」と名付け、
 メンバー変数にはプレゼンテーションからの入力をそのまま入れる、
 文字列型の「command」を宣言しましょう。
 
 ===== output
 戻り地のためのDTOです。
-「TranslateLoginOutDTO」と名付けます。
+「TranslateLogicOutDTO」と名付けます。
 
 まずはLogicからのメッセージを格納する文字列型「message」を宣言します。
 問題は終了判定ですが、こちらは論理型（boolean）「terminate」を宣言して、
@@ -73,6 +73,42 @@
 これら３つをメソッドとして宣言してください。
 データアクセスインターフェイスもDTOを利用してもいいのですが、
 データの構造も単純なので、文字列型などを利用するやり方にとどめます。
+
+=== クラス図
+
+ここまでの設計をクラス図にしてみましょう。
+
+[plantuml]
+----
+@startuml
+interface BookAccessor {
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+package dto {
+    class TranslateLogicInDTO {
+        - String command
+        + getCommand()
+        + setCommand()
+    }
+
+    class TranslateLogicOutDTO {
+        - String message
+        - boolean terminate
+        + getMessage()
+        + setMessage()
+        + isTerminate()
+        + setTerminate()
+    }
+}
+
+interface TranslateLogic {
+    + TranslateLogicOutDTO execute(TranslateLogicInDTO)
+}
+@enduml
+----
 
 === 次のセクションでは…
 

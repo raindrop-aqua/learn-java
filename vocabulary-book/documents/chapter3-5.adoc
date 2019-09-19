@@ -24,6 +24,61 @@
 * メンバ変数にデータアクセスをprivateで宣言してインスタンスを生成しておく。
 メソッドを呼び出すたびにインスタンスを生成するといつまでたっても単語が登録されない。
 
+=== クラス図
+
+ここまでの設計をクラス図にしてみましょう。
+
+[plantuml]
+----
+@startuml
+Main - TranslateLogicImpl :use >
+TranslateLogicImpl - BookOnMemoryImpl : use >
+
+class Main {
+    + main()
+}
+
+interface BookAccessor {
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+class BookOnMemoryImpl implements BookAccessor {
+    - Map<String, String> memory
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+package dto {
+    class TranslateLogicInDTO {
+        - String command
+        + getCommand()
+        + setCommand()
+    }
+
+    class TranslateLogicOutDTO {
+        - String message
+        - boolean terminate
+        + getMessage()
+        + setMessage()
+        + isTerminate()
+        + setTerminate()
+    }
+}
+
+interface TranslateLogic {
+    + TranslateLogicOutDTO execute(TranslateLogicInDTO)
+}
+
+class TranslateLogicImpl implements TranslateLogic {
+    + TranslateLogicOutDTO execute(TranslateLogicInDTO)
+}
+
+@enduml
+----
+
 === 今日のショートカット（Eclipse）
 
 .今日のショートカット
