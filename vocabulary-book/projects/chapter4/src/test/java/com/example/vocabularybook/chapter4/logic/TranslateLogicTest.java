@@ -1,9 +1,7 @@
 package com.example.vocabularybook.chapter4.logic;
 
-import chapter4.dto.TranslateLogicInDTO;
-import chapter4.dto.TranslateLogicOutDTO;
-import chapter4.logic.TranslateLogic;
-import chapter4.logic.TranslateLogicImpl;
+import com.example.vocabularybook.chapter4.dto.TranslateLogicInDTO;
+import com.example.vocabularybook.chapter4.dto.TranslateLogicOutDTO;
 
 import org.junit.Test;
 

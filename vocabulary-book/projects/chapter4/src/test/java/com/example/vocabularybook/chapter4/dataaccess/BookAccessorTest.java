@@ -1,7 +1,5 @@
 package com.example.vocabularybook.chapter4.dataaccess;
 
-import chapter4.dataaccess.BookAccessor;
-import chapter4.dataaccess.BookOnFileImpl;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
