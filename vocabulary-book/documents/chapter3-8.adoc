@@ -15,10 +15,10 @@ include::../projects/chapter3/src/test/java/com/example/vocabularybook/chapter3/
 
 === データアクセスインターフェイス
 
-.BookAccessorTest.java
+.BookOnMemoryImplTest.java
 [source,java,indent=0]
 ----
-include::../projects/chapter3/src/test/java/com/example/vocabularybook/chapter3/dataaccess/BookAccessorTest.java[]
+include::../projects/chapter3/src/test/java/com/example/vocabularybook/chapter3/dataaccess/BookOnMemoryImplTest.java[]
 ----
 
 
