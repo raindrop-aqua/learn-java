@@ -1,0 +1,42 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 4-4 コーディング例
+
+[[app-listing]]
+[source,java]
+.BookOnFileImpl.java
+----
+include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/dataaccess/BookOnFileImpl.java[]
+----
+<1> ファイルの格納位置はどこでもOKです。
+<2> 追加や削除前にファイルの内容をメモリに読み込む
+<3> メモリ操作が終了したら、ファイルを削除する
+<4> メモリの内容をファイルに書き込む。ファイルの内容 ＝ 既存のもの ＋ 今回のメモリ操作 となります
+
+[[app-listing]]
+[source,java]
+.TranslateLogicImpl.java
+----
+include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/logic/TranslateLogicImpl.java[]
+----
+<1> メモリ版の単語帳クラスをファイル版の単語帳クラスに変更する（修正箇所はここだけです！）
+
+=== 次のセクションでは…
+
+今回、コードの一部を変えるだけで機能を追加することができました。
+
+
+
+
+* link:chapter4-5.html[Chapter 4-5 テストの修正]
+
+=== リンク
+
+* link:chapter4-1.html[Chapter 4-1 (機能追加)ファイルに保存する機能を追加]
+* link:chapter4-2.html[Chapter 4-2 設計のヒント]
+* link:chapter4-3.html[Chapter 4-3 コーディングのヒント]
+* link:chapter4-4.html[Chapter 4-4 コーディング例]
+* link:chapter4-5.html[Chapter 4-5 テストの修正]
+* link:chapter4-6.html[Chapter 4-6 テストのコーディング例]

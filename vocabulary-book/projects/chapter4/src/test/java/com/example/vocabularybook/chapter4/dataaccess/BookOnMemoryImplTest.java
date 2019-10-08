@@ -6,14 +6,14 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
-public class BookAccessorTest {
+public class BookOnMemoryImplTest {
 
     /**
      * 登録した単語の探索を行う
      */
     @Test
     public void bookTest01() {
-        BookAccessor book = new BookOnFileImpl();
+        BookAccessor book = new BookOnMemoryImpl();
         book.delete("apple");
         book.add("apple", "りんご");
         // 追加した単語を探索する
@@ -27,7 +27,7 @@ public class BookAccessorTest {
      */
     @Test
     public void bookTest02() {
-        BookAccessor book = new BookOnFileImpl();
+        BookAccessor book = new BookOnMemoryImpl();
         book.delete("apple");
         book.add("apple", "りんご");
         // 追加した単語を削除
@@ -43,13 +43,13 @@ public class BookAccessorTest {
      */
     @Test
     public void bookTest03() {
-        BookAccessor book = new BookOnFileImpl();
+        BookAccessor book = new BookOnMemoryImpl();
         book.delete("apple");
         book.add("apple", "りんご");
         // 再度インスタンスを生成（前のインスタンスは破棄される）
-        book = new BookOnFileImpl();
+        book = new BookOnMemoryImpl();
         String lookup = book.findBy("apple");
-        // メモリ上に登録された単語はインスタンスが破棄されても消えないことを確認する
-        assertThat(lookup, is("りんご"));
+        // メモリ上に登録された単語はインスタンスが破棄されると消えてしまうことを確認する
+        assertThat(lookup, nullValue());
     }
 }

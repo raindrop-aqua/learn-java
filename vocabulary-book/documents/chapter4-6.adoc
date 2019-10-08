@@ -1,0 +1,48 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 4-6 テストコーディング例
+
+=== ロジック層のテスト
+
+.TranslateLogicTest.java
+[source,java,indent=0]
+----
+include::../projects/chapter4/src/test/java/com/example/vocabularybook/chapter4/logic/TranslateLogicTest.java[]
+----
+<1> メモリに格納した場合、インスタンスが破棄されてしまえば、メモリの内容は破棄されてしまう。
+しかし、ファイルに格納した場合は単語はファイルに保存されるため、単語は登録されたままとなる。
+
+ここでの注目点はコードの実装を変更した後にテストを実施すると、エラーが発生することだ。
+エラーが発生することで、変化点をあぶり出すことができる。このことからも、テストの重要性がわかってもらえるだろうか？
+
+
+
+=== データアクセス層のテスト
+
+.BookOnFileImplTest.java
+[source,java,indent=0]
+----
+include::../projects/chapter4/src/test/java/com/example/vocabularybook/chapter4/dataaccess/BookOnFileImplTest.java[]
+----
+
+
+=== 次のチャプターでは…
+
+やっとコードの整理が終わりました。長いチャプターお疲れさまでした。
+次はまた機能追加に戻ります。
+
+アプリケーションの根幹に関わる機能追加ですが、 部分的な変更で機能追加できます。
+コードの整理の重要さを感じてもらえると思います。
+
+* link:chapter5-1.html[Chapter 5 (機能追加)データベースに保存する機能を追加]
+
+=== リンク
+
+* link:chapter4-1.html[Chapter 4-1 (機能追加)ファイルに保存する機能を追加]
+* link:chapter4-2.html[Chapter 4-2 設計のヒント]
+* link:chapter4-3.html[Chapter 4-3 コーディングのヒント]
+* link:chapter4-4.html[Chapter 4-4 コーディング例]
+* link:chapter4-5.html[Chapter 4-5 テストの修正]
+* link:chapter4-6.html[Chapter 4-6 テストのコーディング例]

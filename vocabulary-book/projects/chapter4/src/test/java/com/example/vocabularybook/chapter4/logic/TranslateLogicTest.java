@@ -103,7 +103,7 @@ public class TranslateLogicTest {
 
         // 再度インスタンスを生成（前のインスタンスは破棄される）
         service = new TranslateLogicImpl();
-        // ファイル上に登録された単語はインスタンスが破棄されても消えないことを確認する
+        // ファイル上に登録された単語はインスタンスが破棄されても消えないことを確認する<1>
         input = new TranslateLogicInDTO();
         input.setCommand("t apple");
         output = service.execute(input);

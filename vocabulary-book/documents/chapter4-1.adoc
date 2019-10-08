@@ -1,0 +1,29 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 4-1 (機能追加)ファイルに保存する機能を追加
+
+=== 今回作成するアプリケーション
+
+====
+この間は単語を登録できるように修正していただいてありがとうございます！
+でもやっぱりアプリが終了すると、単語が消えてしまうのは困るんですよね。
+アプリを終了しても単語が消えないようにできますか？
+====
+
+=== 次のセクションでは…
+
+予想していたとはいえ…。
+さて、今回もコーディング前に設計を行いましょう。
+
+* link:chapter4-2.html[Chapter 4-2 設計のヒント]
+
+=== リンク
+
+* link:chapter4-1.html[Chapter 4-1 (機能追加)ファイルに保存する機能を追加]
+* link:chapter4-2.html[Chapter 4-2 設計のヒント]
+* link:chapter4-3.html[Chapter 4-3 コーディングのヒント]
+* link:chapter4-4.html[Chapter 4-4 コーディング例]
+* link:chapter4-5.html[Chapter 4-5 テストの修正]
+* link:chapter4-6.html[Chapter 4-6 テストのコーディング例]

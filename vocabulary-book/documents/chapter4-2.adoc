@@ -1,0 +1,25 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 4-2 設計のヒント
+
+=== 仕様の分解
+
+今回の修正はとてもシンプルです。メモリに保持していたものをファイルに保存するという修正です。
+
+=== 次のセクションでは…
+
+Javaによるファイルの操作を覚えましょう。
+
+
+* link:chapter4-3.html[Chapter 4-3 コーディングのヒント]
+
+=== リンク
+
+* link:chapter4-1.html[Chapter 4-1 (機能追加)ファイルに保存する機能を追加]
+* link:chapter4-2.html[Chapter 4-2 設計のヒント]
+* link:chapter4-3.html[Chapter 4-3 コーディングのヒント]
+* link:chapter4-4.html[Chapter 4-4 コーディング例]
+* link:chapter4-5.html[Chapter 4-5 テストの修正]
+* link:chapter4-6.html[Chapter 4-6 テストのコーディング例]

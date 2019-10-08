@@ -1,0 +1,38 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 4-5 テストの作成
+
+テストの作成とは言うものの、Chapter 3 でテストの核となる部分はコーディングを行っている。
+インターフェイスに対してコーディングを行っているので、インスタンスを生成するクラスを変更するだけである。
+
+=== データアクセスのテスト
+
+Chapter3のBookOnMemoryImplTest.javaをコピーし、BookOnFileImplTest.javaを作成しよう。
+そして、BookOnMemoryImplを生成している部分をBookOnFileImplを生成するように変更するのだ。
+
+まずはテスト実行し、Chapter3と結果を比べてみよう。
+つまり、テストはそのままで実装だけ変えたとき、テスト結果はどの様になるのかをぜひ見てみてほしい。
+想定外の位置で、テストは失敗しただろうか？
+
+=== ビジネスロジックのテスト
+
+こちらも、Chapter3のTranslateLogic.javaをコピーする。
+（パッケージの変更以外）ソースコードの修正は不要だ。
+テストを修正する前に、テスト実施して、動きを見てみよう。
+
+=== 次のセクションでは…
+
+コーディング例を示します。
+
+* link:chapter4-6.html[Chapter 4-6 テストコーディング例]
+
+=== リンク
+
+* link:chapter4-1.html[Chapter 4-1 (機能追加)ファイルに保存する機能を追加]
+* link:chapter4-2.html[Chapter 4-2 設計のヒント]
+* link:chapter4-3.html[Chapter 4-3 コーディングのヒント]
+* link:chapter4-4.html[Chapter 4-4 コーディング例]
+* link:chapter4-5.html[Chapter 4-5 テストの修正]
+* link:chapter4-6.html[Chapter 4-6 テストのコーディング例]

@@ -1,0 +1,100 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 4-3 コーディングのヒント
+
+=== 修正するときのポイント
+
+BookOnMemoryImplクラスはさわらずに、新たにBookOnFileImplを作成し（BookAccessorを実装します）、 ファイルに保存するコードを記述します。
+
+TranslateLoginImplでBookOnMemoryImplのインスタンスを生成していましたが、こちらも同じく修正します。
+
+
+=== クラス図
+
+ここまでの設計をクラス図にしてみましょう。
+
+
+[plantuml]
+----
+@startuml
+Main - TranslateLogicImpl :use >
+TranslateLogicImpl - BookOnFileImpl : use >
+
+class Main {
+    + main()
+}
+
+interface BookAccessor {
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+class BookOnMemoryImpl implements BookAccessor {
+    - Map<String, String> memory
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+class BookOnFileImpl implements BookAccessor {
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+
+interface TranslateLogic {
+    + TranslateLogicOutDTO execute(TranslateLogicInDTO)
+}
+
+class TranslateLogicImpl implements TranslateLogic {
+    + TranslateLogicOutDTO execute(TranslateLogicInDTO)
+}
+
+@enduml
+----
+
+=== ファイルへの書き込み
+
+[source,java,indent=0]
+.コード例
+----
+include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/dataaccess/BookOnFileImpl.java[lines=67..83]
+----
+
+=== ファイルから読み込み
+.コード例
+[source,java,indent=0]
+----
+include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/dataaccess/BookOnFileImpl.java[lines=49..65]
+----
+
+=== 今日のショートカット（Eclipse）
+
+.今日のショートカット
+|===
+|ショートカット|目的
+
+|kbd:[Ctrl + Shift + T]
+|クラスを検索する
+
+|===
+
+=== 次のセクションでは…
+
+次のセクションでは、コーディング例を示します。
+自分がコーディングした内容と比較してみましょう。
+
+* link:chapter4-4.html[Chapter 4-4 コーディング例]
+
+== リンク
+
+* link:chapter4-1.html[Chapter 4-1 (機能追加)ファイルに保存する機能を追加]
+* link:chapter4-2.html[Chapter 4-2 設計のヒント]
+* link:chapter4-3.html[Chapter 4-3 コーディングのヒント]
+* link:chapter4-4.html[Chapter 4-4 コーディング例]
+* link:chapter4-5.html[Chapter 4-5 テストの修正]
+* link:chapter4-6.html[Chapter 4-6 テストのコーディング例]
