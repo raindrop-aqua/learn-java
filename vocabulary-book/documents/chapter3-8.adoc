@@ -4,7 +4,7 @@
 
 == Chapter 3-8 テストコーディング例
 
-=== ロジックインターフェイス
+=== ロジック層のテスト
 
 .TranslateLogicTest.java
 [source,java,indent=0]
@@ -13,7 +13,7 @@ include::../projects/chapter3/src/test/java/com/example/vocabularybook/chapter3/
 ----
 
 
-=== データアクセスインターフェイス
+=== データアクセス層のテスト
 
 .BookOnMemoryImplTest.java
 [source,java,indent=0]
