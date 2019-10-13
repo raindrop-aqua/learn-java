@@ -7,7 +7,8 @@ import java.util.Map;
 
 public class BookOnFileImpl implements BookAccessor {
     // ファイルの格納位置<1>
-    private String path = "~/Documents/learn-java/vocabulary-book/projects/chapter4/data/Book.csv";
+    String home = System.getProperty("user.dir");
+    private String path = home + "/projects/chapter4/data/Book.csv";
     private File file = new File(path);
     private Map<String, String> memory = new HashMap<String, String>();
 
