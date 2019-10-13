@@ -4,7 +4,6 @@
 
 == Chapter 4-4 コーディング例
 
-[[app-listing]]
 [source,java]
 .BookOnFileImpl.java
 ----
@@ -15,7 +14,6 @@ include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/
 <3> メモリ操作が終了したら、ファイルを削除する
 <4> メモリの内容をファイルに書き込む。ファイルの内容 ＝ 既存のもの ＋ 今回のメモリ操作 となります
 
-[[app-listing]]
 [source,java]
 .TranslateLogicImpl.java
 ----
