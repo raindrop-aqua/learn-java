@@ -24,8 +24,9 @@ include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/
 === 次のセクションでは…
 
 今回、コードの一部を変えるだけで機能を追加することができました。
+これも、レイヤーアーキテクチャを採用した恩恵と言えます。
 
-
+では、次はテストの修正です。
 
 
 * link:chapter4-5.html[Chapter 4-5 テストの修正]

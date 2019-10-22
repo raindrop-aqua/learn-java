@@ -1,4 +1,4 @@
-package com.example.vocabularybook.chapter4.dataaccess;
+package com.example.vocabularybook.chapter5.dataaccess;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -8,7 +8,7 @@ import java.util.Map;
 public class BookOnFileImpl implements BookAccessor {
     // ファイルの格納位置<1>
     String home = System.getProperty("user.dir");
-    private String path = home + "/data/Book.csv";
+    private String path = home + "/data/book.csv";
     private File file = new File(path);
     private Map<String, String> memory = new HashMap<String, String>();
 
