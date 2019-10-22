@@ -1,4 +1,7 @@
-.idea
+
+# User-specific stuff
+.idea/workspace.xml
+
 output
 lib
 
@@ -8,4 +11,12 @@ lib
 gradle-app.setting
 build/
 
+
 *.exe
+workspace.xml
+thriftCompiler.xml
+$CACHE_FILE$
+$PRODUCT_WORKSPACE_FILE$
+vocabulary-book/projects/chapter5/.idea/dataSources
+dataSources.local.xml
+dataSources.xml
