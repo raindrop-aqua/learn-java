@@ -1,10 +1,3 @@
-
-# User-specific stuff
-.idea/workspace.xml
-
-output
-lib
-
 ## Gradle
 
 .gradle
@@ -13,10 +6,17 @@ build/
 
 
 *.exe
+*.class
+
+output
+lib
+
 workspace.xml
 thriftCompiler.xml
+
 $CACHE_FILE$
 $PRODUCT_WORKSPACE_FILE$
 vocabulary-book/projects/chapter5/.idea/dataSources
 dataSources.local.xml
 dataSources.xml
+
