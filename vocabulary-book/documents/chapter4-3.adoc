@@ -62,15 +62,19 @@ class TranslateLogicImpl implements TranslateLogic {
 [source,java,indent=0]
 .コード例
 ----
-include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/dataaccess/BookOnFileImpl.java[lines=67..83]
+include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/hints/Hint1.java[lines=8..14]
 ----
+
+キャッシュを利用した効率のいいファイル書き込みを行うため、BufferedWriterを利用します。
 
 === ファイルから読み込み
 .コード例
 [source,java,indent=0]
 ----
-include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/dataaccess/BookOnFileImpl.java[lines=49..65]
+include::../projects/chapter4/src/main/java/com/example/vocabularybook/chapter4/hints/Hint2.java[lines=8..14]
 ----
+
+ファイルにテキスト情報を書き込むときには、エンコード形式を意識しましょう。
 
 === 今日のショートカット（Eclipse）
 
