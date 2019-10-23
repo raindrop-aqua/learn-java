@@ -1,0 +1,250 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 5-3 コーディングのヒント
+
+=== SQL
+Javaからデータベースを操作する方法はSQLを利用します。
+SQLはデータの操作を行うことができ、Java だけではなくいろいろな言語でサポートされているので、
+その知識は長く使うことができます。
+
+==== テーブルの作成（CREATE文）
+[source,sql]
+----
+create table テーブル名 (
+    フィールド名１ 型名(型の大きさ),
+    フィールド名２ 型名(型の大きさ),
+    フィールド名３ 型名(型の大きさ)
+)
+----
+
+==== データの抽出（select）
+[source,sql]
+----
+select
+    フィールド名１,
+    フィールド名２,
+    フィールド名３
+from テーブル名
+where フィールド名１ = ?
+----
+
+where 句を利用して任意のレコードを抽出することができます。
+? の位置には条件に対するパラメータを設定できます。
+
+
+==== データの追加（insert）
+[source,sql]
+----
+insert into テーブル名 (
+    フィールド名１,
+    フィールド名２,
+    フィールド名３
+) values (
+    ?,
+    ?,
+    ?
+)
+----
+
+レコードを１件追加することができます。
+? の位置にはフィールドに対応したパラメータを設定できます。
+
+==== データの削除（delete）
+[source,sql]
+----
+delete from テーブル名
+where フィールド名１ = ?
+
+----
+
+where 句を利用して条件に合致したレコードをすべて削除することができます。
+? の位置には条件に対するパラメータを設定できます。
+
+==== データの更新（update）
+[source,sql]
+----
+update テーブル名
+set フィールド名１ = ?,
+    フィールド名２ = ?,
+    フィールド名３ = ?
+where フィールド名１ = ?
+----
+
+今回のアプリでは利用しませんでしたが、指定したレコードの値を変更することもできます。
+
+=== 修正するときのポイント
+
+BookOnMemoryImplクラスはさわらずに、新たにBookDbImplを作成し（BookAccessorを実装します）、データベースにアクセスするコードを記述します。
+
+TranslateLoginImplでBookOnFileImplのインスタンスを生成していましたが、こちらも同じく修正します。
+
+
+=== クラス図
+
+ここまでの設計をクラス図にしてみましょう。
+
+[plantuml]
+----
+@startuml
+Main - TranslateLogicImpl : use >
+TranslateLogicImpl - BookOnDbImpl : use >
+
+class Main {
+    + main()
+}
+
+interface BookAccessor {
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+class BookOnMemoryImpl implements BookAccessor {
+    - Map<String, String> memory
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+class BookOnFileImpl implements BookAccessor {
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+}
+
+class BookOnDbImpl implements BookAccessor {
+    + String findBy(word)
+    + add(word, translated)
+    + delete(word)
+    - getConnection()
+}
+
+interface TranslateLogic {
+    + TranslateLogicOutDTO execute(TranslateLogicInDTO)
+}
+
+class TranslateLogicImpl implements TranslateLogic {
+    + TranslateLogicOutDTO execute(TranslateLogicInDTO)
+}
+@enduml
+----
+
+=== ライブラリの追加
+世の中には沢山の種類のデータベースが存在しています。
+Oracle, DB2, SQLServer, PostgreSQL, MySQL, Informix, MongoDB などなど
+
+Java としてはデータベースそのもののライブラリは用意していません。
+その代わりに、データベースと Java の間のやり取りの方法を定義しています（JDBCといいます）
+
+データベースベンダーは自分のところの製品を使ってもらいたいため、
+それぞれが JDBC の作法に従って構築したライブラリを提供しているのです。
+
+今回は H2(link:http://www.h2database.com/html/main.html[WebSite]) というデータベースを利用します。
+H2 はデータベースのためのサーバを構築することなくデータベースの基本的な機能を利用することができます。
+H2 は Java で作られているため、Android アプリケーションなどに組み込んで使うこともできます。
+
+ライブラリを利用するためにはプロジェクトの設定が必要です。
+教材の場所から H2 の JDBC ドライバ（JARファイル）を取得し、Eclipse にライブラリを追加してみましょう。
+以下の手順に従ってプロジェクトにライブラリを追加してください。
+====
+. project に lib という名前のフォルダを作成する
+. lib フォルダに H2 の JDBCドライバ（JARファイル）をコピーする（エクスプローラや Finder などで）
+. eclipse の project 上で右クリックをして、プロジェクトプロパティを選択する
+. Java のビルド・パスを選択し、ライブラリータブを選択する
+. Jar の追加ボタンで先程追加したJARファイルを選択する
+====
+
+=== JDBCコーディング
+
+JDBC を利用したデータ取得はたくさんのクラスが登場します。
+それぞれのクラスの役割を覚えて、データを自在に操れるようになりましょう。
+
+==== Connection / DataSource
+データベースへの接続を担当するクラスです。
+
+データベースへの接続を行うためには、``接続文字列`` ``ユーザー名`` ``パスワード`` が必要です。
+上記３つの情報を DriverManager クラスに与えて接続を取得します。
+
+[source,java,indent=0]
+----
+include::../projects/chapter5/src/main/java/com/example/vocabularybook/chapter5/hints/Hint1.java[lines=9..12]
+----
+<1> データベースファイルの格納位置はどこでもOKです（上記の例では ``c:/data/`` フォルダの ``book.mv.db`` というファイルを読み込みます）
+<2> H2 のデフォルトのユーザー名です
+<3> パスワードはなしでも構いません
+
+先程のクラス図のなかに getConnection という名前の関数があったことに気がついたでしょうか？
+この関数内で、JDBCドライバを利用して、データベースファイルへの接続を作成します。
+
+※ 使い終わったら close を呼び出して接続を解除しましょう。
+
+==== Statement / PreparedStatement
+SQLやSQLで利用するパラメータを管理するためのクラスです。
+
+Statement と PreparedStatement がありますが、通常は PreparedStatement を利用してください。
+PreparedStatement は SQL が与えられると実行前にSQLの解釈を行い、高速に動作するよう準備を行います。
+また、条件文などへ与えるパラメータを SQL 文そのものから分離することができます。
+
+Java において、SQL は単なる文字列です。以下のように文字列結合を利用して SQL 文を組み立てることもできます。
+
+.誤った例
+[source,java,indent=0]
+----
+include::../projects/chapter5/src/main/java/com/example/vocabularybook/chapter5/hints/Hint2.java[lines=5..7]
+----
+
+このやり方は Java の SQL 記述方法において禁じ手です。
+詳しい説明は省きますが、この記述方式は ``SQLインジェクション`` というセキュリティホールを発生させます。
+
+パラメータを利用するときは以下のように記述してください。
+
+.正しい例
+[source,java,indent=0]
+----
+include::../projects/chapter5/src/main/java/com/example/vocabularybook/chapter5/hints/Hint3.java[lines=10..16]
+----
+
+delete などのような結果を返さないSQLに関しては、``Statement#executeUpdate()`` を使ってください。
+
+
+※ 使い終わったら close を呼び出しましょう。
+
+==== ResultSet
+ResultSet は結果を管理するためのクラスです。
+
+SQL文の中には、SQLを実施したときに、結果を返却するものがあります（select 句など）
+
+以下のように記述します。
+
+[source,java,indent=0]
+----
+include::../projects/chapter5/src/main/java/com/example/vocabularybook/chapter5/hints/Hint4.java[lines=11..13]
+----
+<1> stmt.executeQuery(); 実施直後はなにもレコードを選択していない状態です。
+rs.next() はレコードがない場合 null を返却するため、while文などを利用してすべてのレコードを読み出します。
+<2> フィールドに適した型で取得してください
+
+※ 使い終わったら close を呼び出しましょう。
+
+=== bookテーブルの作成
+
+ここまで学んできた SQL と JDBC を使って、まずはテーブルを作成してみましょう。
+その後は、findBy, add, delete の各関数を実装してみてください。
+
+=== 次のセクションでは…
+
+次のセクションでは、コーディング例を示します。
+自分がコーディングした内容と比較してみましょう。
+
+* link:chapter5-4.html[Chapter 5-4 コーディング例]
+
+== リンク
+
+* link:chapter5-1.html[Chapter 5-1 (機能追加)データベースに保存する機能を追加]
+* link:chapter5-2.html[Chapter 5-2 設計のヒント]
+* link:chapter5-3.html[Chapter 5-3 コーディングのヒント]
+* link:chapter5-4.html[Chapter 5-4 コーディング例]
+* link:chapter5-5.html[Chapter 5-5 テストの修正]
+* link:chapter5-6.html[Chapter 5-6 テストのコーディング例]

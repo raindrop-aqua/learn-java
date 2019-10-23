@@ -1,0 +1,34 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 5-5 テストの作成
+
+=== データアクセスのテスト
+
+Chapter4のBookOnFileImplTest.javaをコピーし、BookOnDbImplTest.javaを作成しましょう。
+そして、BookOnFileImplを生成している部分をBookOnDbImplを生成するように変更します。
+
+まずはテスト実行し、Chapter4と結果を比べてみましょう。
+データの格納場所がファイルからデータベースに変わっただけなので、テスト結果も同じです。
+
+=== ビジネスロジックのテスト
+
+こちらも、Chapter4のTranslateLogic.javaをコピーしてください。
+（パッケージの変更以外）ソースコードの修正は不要です。
+テストを修正する前に、テスト実施して、動きを見てみましょう。
+
+=== 次のセクションでは…
+
+コーディング例を示します。
+
+* link:chapter5-6.html[Chapter 5-6 テストコーディング例]
+
+=== リンク
+
+* link:chapter5-1.html[Chapter 5-1 (機能追加)データベースに保存する機能を追加]
+* link:chapter5-2.html[Chapter 5-2 設計のヒント]
+* link:chapter5-3.html[Chapter 5-3 コーディングのヒント]
+* link:chapter5-4.html[Chapter 5-4 コーディング例]
+* link:chapter5-5.html[Chapter 5-5 テストの修正]
+* link:chapter5-6.html[Chapter 5-6 テストのコーディング例]

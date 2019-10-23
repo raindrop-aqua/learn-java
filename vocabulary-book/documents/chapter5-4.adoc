@@ -1,0 +1,34 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 5-4 コーディング例
+
+[source,java]
+.BookOnDbImpl.java
+----
+include::../projects/chapter5/src/main/java/com/example/vocabularybook/chapter5/dataaccess/BookOnDbImpl.java[]
+----
+
+[source,java]
+.TranslateLogicImpl.java
+----
+include::../projects/chapter5/src/main/java/com/example/vocabularybook/chapter5/logic/TranslateLogicImpl.java[]
+----
+<1> ファイル版の単語帳クラスをデータベース版の単語帳クラスに変更する（修正箇所はここだけです！）
+
+=== 次のセクションでは…
+
+では、次はテストの修正です。
+
+
+* link:chapter5-5.html[Chapter 5-5 テストの修正]
+
+=== リンク
+
+* link:chapter5-1.html[Chapter 5-1 (機能追加)データベースに保存する機能を追加]
+* link:chapter5-2.html[Chapter 5-2 設計のヒント]
+* link:chapter5-3.html[Chapter 5-3 コーディングのヒント]
+* link:chapter5-4.html[Chapter 5-4 コーディング例]
+* link:chapter5-5.html[Chapter 5-5 テストの修正]
+* link:chapter5-6.html[Chapter 5-6 テストのコーディング例]

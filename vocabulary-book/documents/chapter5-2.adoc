@@ -1,0 +1,45 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 5-2 設計のヒント
+
+=== 仕様の分解
+
+今回の修正もとても簡単です。
+メモリ→ファイル時と同じように、部分的な修正で、
+保存先をファイルからデータベースに変更することができます。
+
+=== テーブルの設計
+
+コーディングに入る前に、テーブルの設計を行っておきましょう。
+
+[plantuml]
+----
+@startuml
+entity "book" {
+    + word1 : char(20) [PK]
+    ==
+    word2 : char(20)
+}
+@enduml
+----
+
+語句と翻訳語句をペアで登録するため、フィールド２つのテーブルを作成しました。
+更新日付など、好きなようにアレンジしてみてください。
+
+=== 次のセクションでは…
+
+Javaによるデータベースの操作を覚えましょう。
+
+
+* link:chapter5-3.html[Chapter 5-3 コーディングのヒント]
+
+=== リンク
+
+* link:chapter5-1.html[Chapter 5-1 (機能追加)データベースに保存する機能を追加]
+* link:chapter5-2.html[Chapter 5-2 設計のヒント]
+* link:chapter5-3.html[Chapter 5-3 コーディングのヒント]
+* link:chapter5-4.html[Chapter 5-4 コーディング例]
+* link:chapter5-5.html[Chapter 5-5 テストの修正]
+* link:chapter5-6.html[Chapter 5-6 テストのコーディング例]
