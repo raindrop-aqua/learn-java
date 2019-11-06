@@ -49,7 +49,7 @@ public class BookOnFileImplTest {
         // 再度インスタンスを生成（前のインスタンスは破棄される）
         book = new BookOnFileImpl();
         String lookup = book.findBy("apple");
-        // メモリ上に登録された単語はインスタンスが破棄されても消えないことを確認する
+        // ファイルに登録された単語はインスタンスが破棄されても消えないことを確認する
         assertThat(lookup, is("りんご"));
     }
 }

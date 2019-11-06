@@ -2,7 +2,7 @@
 :source-highlighter: coderay
 :experimental:
 
-== Chapter Chapter 5 (機能追加)データベースに保存する機能を追加
+== Chapter 5-1 (機能追加)データベースに保存する機能を追加
 
 === 今回作成するアプリケーション
 
