@@ -10,16 +10,16 @@ import com.example.vocabularybook.chapter6.dto.TranslateLogicOutDTO;
 public class TranslateLogicImpl implements TranslateLogic {
 
     // 単語帳データへのアクセス<1>
-    private BookAccessor bookDao;
+    private BookAccessor book;
 
     // dataSourceプロパティへのアクセサ<2>
-    public BookAccessor getBookDao() {
-        return bookDao;
+    public BookAccessor getBook() {
+        return book;
     }
 
     // dataSourceプロパティへのアクセサ<3>
-    public void setBookDao(BookAccessor bookDao) {
-        this.bookDao = bookDao;
+    public void setBook(BookAccessor book) {
+        this.book = book;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class TranslateLogicImpl implements TranslateLogic {
                     break;
                 case "T":
                     String queryWord = parsedCommand[1];
-                    String translatedWord = bookDao.findBy(queryWord);
+                    String translatedWord = book.findBy(queryWord);
 
                     if (translatedWord == null) {
                         output.setMessage(queryWord + " -> " + "登録されていません");
@@ -48,14 +48,14 @@ public class TranslateLogicImpl implements TranslateLogic {
                     String newWord = parsedCommand[1];
                     String newTranslatedWord = parsedCommand[2];
                     // 追加前に単語を削除
-                    bookDao.delete(newWord);
+                    book.delete(newWord);
                     // 単語を追加
-                    bookDao.add(newWord, newTranslatedWord);
+                    book.add(newWord, newTranslatedWord);
                     output.setMessage("登録しました");
                     break;
                 case "D":
                     String deleteWord = parsedCommand[1];
-                    bookDao.delete(deleteWord);
+                    book.delete(deleteWord);
                     output.setMessage("削除しました");
                     break;
                 default:
