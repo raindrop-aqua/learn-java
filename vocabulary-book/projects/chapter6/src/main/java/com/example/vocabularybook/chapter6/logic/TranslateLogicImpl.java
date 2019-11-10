@@ -1,7 +1,6 @@
 package com.example.vocabularybook.chapter6.logic;
 
 import com.example.vocabularybook.chapter6.dataaccess.BookAccessor;
-import com.example.vocabularybook.chapter6.dataaccess.BookOnDbImpl;
 import com.example.vocabularybook.chapter6.dto.TranslateLogicInDTO;
 import com.example.vocabularybook.chapter6.dto.TranslateLogicOutDTO;
 
@@ -13,10 +12,12 @@ public class TranslateLogicImpl implements TranslateLogic {
     // 単語帳データへのアクセス<1>
     private BookAccessor book;
 
+    // dataSourceプロパティへのアクセサ<2>
     public BookAccessor getBook() {
         return book;
     }
 
+    // dataSourceプロパティへのアクセサ<3>
     public void setBook(BookAccessor book) {
         this.book = book;
     }

@@ -1,7 +1,10 @@
 package com.example.vocabularybook.chapter6.dataaccess;
 
 import javax.sql.DataSource;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class BookOnDbImpl implements BookAccessor {
     // Database接続<1>
