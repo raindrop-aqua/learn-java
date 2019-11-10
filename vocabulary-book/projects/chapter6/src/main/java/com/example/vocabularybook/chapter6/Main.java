@@ -11,9 +11,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // Spring Framework 設定ファイルを読み込み
+        // Spring Framework 設定ファイルを読み込み<1>
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        // Spring Framework が管理しているクラスよりインスタンスを取得する<1>
+        // Spring Framework が管理しているクラスよりインスタンスを取得する<2>
         TranslateLogic logic = context.getBean(TranslateLogic.class);
 
         try (Scanner sc = new Scanner(System.in)) {
