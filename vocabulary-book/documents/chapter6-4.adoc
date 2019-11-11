@@ -1,0 +1,58 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 6-4 コーディング例
+
+[source,xml]
+.applicationContext.xml
+----
+include::../projects/chapter6/src/main/resources/applicationContext.xml[]
+----
+(1) データベースへの接続情報を記載します。以前のchapterではクラス内で指定していましたが、設定ファイルに情報を外だしすることができました。
+
+(2) データアクセスの設定を記述します。データベース接続のID を ds プロパティに設定しています。
+
+(3) ビジネスロジックの設定を記述します。データアクセスのIDを book プロパティに設定しています。
+
+[source,java]
+.Main.java
+----
+include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/Main.java[]
+----
+<1> Spring Framework の設定ファイルを読み込みます。
+<2> Spring Framework からインスタンスを取得します。
+
+[source,java]
+.TranslateLogicImpl.java
+----
+include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/logic/TranslateLogicImpl.java[]
+----
+<1> プロパティを宣言します。
+<2> プロパティへのアクセサを作成します。
+<3> 同じくアクセサを作成します。プロパティを private で宣言しているので、アクセサがないとプロパティを探し出すことができません。
+
+[source,java]
+.BookOnDbImpl.java.java
+----
+include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/dataaccess/BookOnDbImpl.java[]
+----
+<1> プロパティを宣言します。
+<2> プロパティへのアクセサを作成します。
+<3> 同じくアクセサを作成します。プロパティを private で宣言しているので、アクセサがないとプロパティを探し出すことができません。
+<4> 以前の chapter ではこの関数内でデータベース接続を確立していましたが、データベース接続をプロパティ経由で取得するように変更しました。
+
+=== 次のセクションでは…
+
+では、次はテストの修正です。Spring Framework を利用することになっても、テストの方法は大きく変わりません。
+
+* link:chapter6-5.html[Chapter 6-5 テストの修正]
+
+=== リンク
+
+* link:chapter6-1.html[Chapter 6-1 Spring Framework 適用（DI）]
+* link:chapter6-2.html[Chapter 6-2 Spring Framework とは]
+* link:chapter6-3.html[Chapter 6-3 コーディングのヒント]
+* link:chapter6-4.html[Chapter 6-4 コーディング例]
+* link:chapter6-5.html[Chapter 6-5 テストの修正]
+* link:chapter6-6.html[Chapter 6-6 テストのコーディング例]

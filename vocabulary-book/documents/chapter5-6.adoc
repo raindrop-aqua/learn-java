@@ -24,8 +24,7 @@ include::../projects/chapter5/src/test/java/com/example/vocabularybook/chapter5/
 === 次のチャプターでは…
 次は２つのチャプターを使って、Java では定番の Spring Framework の利用方法を学びます。
 
-* link:chapter6-1.html[Chapter 6 (機能追加)Spring Framework 適用（DI）]
-
+* link:chapter6-1.html[Chapter 6 Spring Framework 適用（DI）]
 
 === リンク
 

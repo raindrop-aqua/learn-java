@@ -1,0 +1,28 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 6-1 Spring Framework 適用（DI）
+
+=== 今回やること
+
+====
+今まで作成してきたプロジェクトに Spring Framework を適用してみましょう。
+
+Spring Framework を適用することで、拡張性と保守性の両方を享受することができます。
+====
+
+=== 次のセクションでは…
+
+Spring Framework の説明を行います。
+
+* link:chapter6-2.html[Chapter 6-2 Spring Framework とは]
+
+=== リンク
+
+* link:chapter6-1.html[Chapter 6-1 Spring Framework 適用（DI）]
+* link:chapter6-2.html[Chapter 6-2 Spring Framework とは]
+* link:chapter6-3.html[Chapter 6-3 コーディングのヒント]
+* link:chapter6-4.html[Chapter 6-4 コーディング例]
+* link:chapter6-5.html[Chapter 6-5 テストの修正]
+* link:chapter6-6.html[Chapter 6-6 テストのコーディング例]

@@ -1,0 +1,36 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 6-6 テストコーディング例
+
+=== ロジック層のテスト
+
+.TranslateLogicTest.java
+[source,java,indent=0]
+----
+include::../projects/chapter6/src/test/java/com/example/vocabularybook/chapter6/logic/TranslateLogicTest.java[]
+----
+
+=== データアクセス層のテスト
+
+.BookOnDbImplTest.java
+[source,java,indent=0]
+----
+include::../projects/chapter6/src/test/java/com/example/vocabularybook/chapter6/dataaccess/BookOnDbImplTest.java[]
+----
+
+
+=== 次のチャプターでは…
+次は２つのチャプターを使って、Java では定番の Spring Framework の利用方法を学びます。
+
+* link:chapter7-1.html[Chapter 7 Spring Framework 適用（AOP）]
+
+=== リンク
+
+* link:chapter6-1.html[Chapter 6-1 Spring Framework 適用（DI）]
+* link:chapter6-2.html[Chapter 6-2 Spring Framework とは]
+* link:chapter6-3.html[Chapter 6-3 コーディングのヒント]
+* link:chapter6-4.html[Chapter 6-4 コーディング例]
+* link:chapter6-5.html[Chapter 6-5 テストの修正]
+* link:chapter6-6.html[Chapter 6-6 テストのコーディング例]
