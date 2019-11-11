@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- プロパティの代入(1) -->
+    <bean id="hintBean1" class="com.example.vocabularybook.chapter6.hints.Hint1">
+        <property name="path" value="c:/temp/dataa.csv"/>
+    </bean>
+
+    <!-- Beanの代入(2) -->
+    <bean id="hintBean2" class="com.example.vocabularybook.chapter6.hints.Hint2">
+        <property name="hint" ref="hintBean1"/>
+    </bean>
+
+</beans>
