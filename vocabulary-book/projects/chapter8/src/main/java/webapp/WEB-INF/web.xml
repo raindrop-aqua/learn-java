@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>bookTranslate</servlet-name>
+        <servlet-class>com.example.vocabularybook.chapter8.handler.BookTranslateServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>bookAdd</servlet-name>
+        <servlet-class>com.example.vocabularybook.chapter8.handler.BookAddServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>bookDelete</servlet-name>
+        <servlet-class>com.example.vocabularybook.chapter8.handler.BookDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>bookTranslate</servlet-name>
+        <url-pattern>/translate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>bookAdd</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>bookDelete</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <context-param>
+        <param-name>contextConfiguration</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+</web-app>
