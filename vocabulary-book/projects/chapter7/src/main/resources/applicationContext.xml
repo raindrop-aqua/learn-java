@@ -18,9 +18,33 @@
 
     <!-- ビジネスロジック(3) -->
     <bean id="bookLogic" class="com.example.vocabularybook.chapter7.logic.TranslateLogicImpl">
-        <property name="book" ref="bookDao"/>
+        <property name="book" ref="aopBookDao"/>
     </bean>
 
+    <!-- ロギングクラス -->
+    <bean id="logger" class="com.example.vocabularybook.chapter7.logging.Logger">
+    </bean>
 
+    <!-- AOP設定（データアクセス） -->
+    <bean id="aopBookDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="bookDao">
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>logger</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- AOP設定（データアクセス） -->
+    <bean id="aopBookLogic" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="bookLogic">
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>logger</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>
