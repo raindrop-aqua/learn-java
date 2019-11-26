@@ -14,7 +14,7 @@ public class Main {
         // Spring Framework 設定ファイルを読み込み<1>
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         // Spring Framework が管理しているクラスよりインスタンスを取得する<2>
-        TranslateLogic logic = context.getBean(TranslateLogic.class);
+        TranslateLogic logic = (TranslateLogic)context.getBean("bookLogic");
 
         try (Scanner sc = new Scanner(System.in)) {
             while (true) {
