@@ -22,7 +22,7 @@ include::../projects/chapter6/src/test/java/com/example/vocabularybook/chapter6/
 
 
 === 次のチャプターでは…
-次は２つのチャプターを使って、Java では定番の Spring Framework の利用方法を学びます。
+Spring Framework のもう一つの特徴であるAOPについて学びましょう。
 
 * link:chapter7-1.html[Chapter 7 Spring Framework 適用（AOP）]
 
