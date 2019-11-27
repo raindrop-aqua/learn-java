@@ -1,0 +1,41 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 7-2 AOP とは
+
+=== Spring Framework について
+
+前 Chapter では Spring Framework の特徴の一つである DI について取り上げました。
+今回はもう一つの特徴である AOP について学んでいきましょう。
+
+=== AOP
+
+アプリを作成していると、アプリそのものにはあまり関係のない処理を入れる必要があります。
+代表的なものとして、ログの出力があります。ログはアプリの動作を確認したり、不具合が発生したときの助けにはなりますが、
+ログを出力すること自体は、単語帳とはなんの関係もありません。
+
+また、ファイルを開いてデータを書き込むことを考えてみましょう。
+まずはファイルを開きます。次にタイトルや見出し、本文を書き込んでから、最後にファイルに書き込みます
+…という処理があったとき、いくつかの関数をまたいで（横断して）ファイルの処理を行います。
+このとき、データを書き込む処理の分割具合と、ファイルの処理の流れが異なっていることに気がつくでしょうか？
+
+AOPはこのような問題を解決する手段を提供してくれます。
+
+=== Spring Framework における AOP
+
+Spring Framework はクラスを管理する仕組みだと解説しましたが、
+AOP を利用することで、 クラス内の「関数」という論理的な分割ポイントに処理を挟み込むことができます。
+
+=== 次のセクションでは…
+
+Spring Framework（AOP） のコーディング方法を学びます。
+
+* link:chapter7-3.html[Chapter 7-3 コーディングのヒント]
+
+=== リンク
+
+* link:chapter7-1.html[Chapter 7-1 Spring Framework 適用（AOP）]
+* link:chapter7-2.html[Chapter 7-2 AOP とは]
+* link:chapter7-3.html[Chapter 7-3 コーディングのヒント]
+* link:chapter7-4.html[Chapter 7-4 コーディング例]

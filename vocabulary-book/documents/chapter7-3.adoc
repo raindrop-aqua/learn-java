@@ -1,0 +1,59 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 7-3 コーディングのヒント
+
+=== ログ出力クラス
+
+まずはログを出力するクラスを作ります。MethodBeforeAdvice, AfterReturningAdvice
+ふたつのインターフェイスを実装し、関数を実施します。
+
+[source,java]
+----
+include::../projects/chapter7/src/main/java/com/example/vocabularybook/chapter7/hints/Hint2.java[]
+----
+
+=== applicationContext.xml（設定ファイル）
+
+クラスを Bean として宣言し、設定ファイル中で自由に利用することができます。
+
+[source,xml]
+.applicationContext.xml
+----
+include::../projects/chapter7/src/main/java/com/example/vocabularybook/chapter7/hints/applicationContext.xml[]
+----
+
+. ログ出力 Bean を設定します。
+
+. ログ出力 Bean を 被AOPクラスにかぶせます。
+
+=== Spring Bean を利用する
+
+設定ファイルで宣言したファイルを利用してみましょう。
+
+[source,java]
+----
+include::../projects/chapter7/src/main/java/com/example/vocabularybook/chapter7/hints/Hint1.java[]
+----
+<1> これらを実行すると、execute 関数の実行前後でログが出力されます。
+
+
+=== ライブラリの追加
+Spring Framework を利用するためには、ライブラリの追加が必要です。教材格納場所から jar ファイルをダウンロードし、Eclipse に追加してください。
+
+=== 次のセクションでは…
+
+次のセクションでは、コーディング例を示します。
+自分がコーディングした内容と比較してみましょう。
+
+今セクションで学習した内容を単語帳アプリに組み込んでみましょう。
+
+* link:chapter7-4.html[Chapter 7-4 コーディング例]
+
+== リンク
+
+* link:chapter7-1.html[Chapter 7-1 Spring Framework 適用（AOP）]
+* link:chapter7-2.html[Chapter 7-2 AOP とは]
+* link:chapter7-3.html[Chapter 7-3 コーディングのヒント]
+* link:chapter7-4.html[Chapter 7-4 コーディング例]

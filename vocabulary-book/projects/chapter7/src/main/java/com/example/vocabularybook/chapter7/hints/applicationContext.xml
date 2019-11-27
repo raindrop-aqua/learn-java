@@ -3,14 +3,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- プロパティの代入(1) -->
     <bean id="hintBean1" class="com.example.vocabularybook.chapter7.hints.Hint1">
-        <property name="path" value="c:/temp/dataa.csv"/>
     </bean>
 
-    <!-- Beanの代入(2) -->
+    <!-- ログ出力クラス(1) -->
     <bean id="hintBean2" class="com.example.vocabularybook.chapter7.hints.Hint2">
-        <property name="hint" ref="hintBean1"/>
     </bean>
 
+    <!-- AOPの設定(2) -->
+    <bean id="aopHintBean1" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="hintBean1">
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>hintBean2</value>
+            </list>
+        </property>
+    </bean>
 </beans>

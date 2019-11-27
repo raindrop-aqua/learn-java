@@ -1,0 +1,51 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 7-4 コーディング例
+
+[source,xml]
+.applicationContext.xml
+----
+include::../projects/chapter7/src/main/resources/applicationContext.xml[]
+----
+. ログを出力するクラスを設定します。
+
+. データアクセス向けにAOP設定した Bean を作成します。
+
+. ビジネスロジック向けにAOP設定した Bean を作成します。
+
+. AOP設定された Bean が設定されていることに注目してください。
+
+[source,java]
+.Main.java
+----
+include::../projects/chapter7/src/main/java/com/example/vocabularybook/chapter7/Main.java[]
+----
+<1> Spring Framework から取得する Bean が異なります。前 Chapter と見比べてみてください。
+
+[source,java]
+.Logger.java
+----
+include::../projects/chapter7/src/main/java/com/example/vocabularybook/chapter7/logging/Logger.java[]
+----
+Logger クラスはログを出力するクラスです。AOP設定されたクラスの関数を包み込むように動作します。
+被AOPクラスには何も手を入れていないことに注目してください。
+
+<1> 被AOPクラスの関数が呼び出される前に実行されます。
+<2> 被AOPクラスの関数が実行されたあとに実行されます。
+
+このように、関数の前後でログを出力することで、どの関数がどういったタイミングで呼ばれたかを知ることができます。
+仮に被AOPクラスでエラーが発生した場合は、After にあたるログが表示されないため、どこでエラーが起きたかもすぐにつかむことができます。
+
+=== 次のチャプターでは…
+これまで作ってきたアプリを外部に公開しましょう。
+
+* link:chapter8-1.html[Chapter 8 （機能追加）サービスを Web に公開する]
+
+=== リンク
+
+* link:chapter7-1.html[Chapter 7-1 Spring Framework 適用（AOP）]
+* link:chapter7-2.html[Chapter 7-2 AOP とは]
+* link:chapter7-3.html[Chapter 7-3 コーディングのヒント]
+* link:chapter7-4.html[Chapter 7-4 コーディング例]

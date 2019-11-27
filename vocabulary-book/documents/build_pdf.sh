@@ -42,9 +42,7 @@ asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/ch
 asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter6-5.pdf chapter6-5.adoc
 asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter6-6.pdf chapter6-6.adoc
 
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-1.pdf chapter7-1.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-2.pdf chapter7-2.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-3.pdf chapter7-3.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-4.pdf chapter7-4.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-5.pdf chapter7-5.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-6.pdf chapter7-6.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-1.pdf chapter7-1.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-2.pdf chapter7-2.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-3.pdf chapter7-3.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter7-4.pdf chapter7-4.adoc

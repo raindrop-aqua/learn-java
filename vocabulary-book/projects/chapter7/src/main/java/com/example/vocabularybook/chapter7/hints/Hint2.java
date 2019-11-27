@@ -1,30 +1,23 @@
 package com.example.vocabularybook.chapter7.hints;
 
+import org.springframework.aop.AfterReturningAdvice;
+import org.springframework.aop.MethodBeforeAdvice;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Hint2 {
+import java.lang.reflect.Method;
 
-    private Hint1 hint;
-
-    public Hint1 getHint() {
-        return hint;
+public class Hint2 implements MethodBeforeAdvice, AfterReturningAdvice {
+    @Override
+    public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
+        // 関数が呼ばれる前に実行されます<1>
+        System.out.println("After :" + method.getName() + "[" + target + "]");
     }
 
-    public void setHint(Hint1 hint) {
-        this.hint = hint;
-    }
-
-    private void printPath() {
-        System.out.println(hint.getPath());
-    }
-
-    public static void main(String[] args) {
-        // Spring Framework 設定ファイルを読み込み<1>
-        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        // Spring Framework が管理しているクラスよりインスタンスを取得する<2>
-        Hint2 hint2 = context.getBean(Hint2.class);
-        // 関数を呼び出し<3>
-        hint2.printPath();
+    @Override
+    public void before(Method method, Object[] args, Object target) throws Throwable {
+        // 関数が呼ばれて実行されたあとに実行されます<2>
+        System.out.println("Before:" + method.getName() + "[" + target + "]");
     }
 }
+
