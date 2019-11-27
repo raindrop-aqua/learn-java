@@ -5,7 +5,7 @@
 
     <!-- プロパティの代入(1) -->
     <bean id="hintBean1" class="com.example.vocabularybook.chapter6.hints.Hint1">
-        <property name="path" value="c:/temp/dataa.csv"/>
+        <property name="path" value="c:/temp/data.csv"/>
     </bean>
 
     <!-- Beanの代入(2) -->
