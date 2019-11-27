@@ -24,9 +24,10 @@ include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/
 include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/hints/applicationContext.xml[]
 ----
 
-(1) 前述の Hint1 クラスを hintBean1 として Spring Framework に先前します。プロパティにも代入しておきます。
+(1) 前述の Hint1 クラスを hintBean1 として Spring Framework に登録・宣言します。
+プロパティにも代入しておきます。
 
-(2) Hint1 クラスを Hint2 クラスにプロパティに代入します。
+(2) Hint1 クラスを Hint2 クラスのプロパティに代入します。
 
 === Spring Bean を利用する
 

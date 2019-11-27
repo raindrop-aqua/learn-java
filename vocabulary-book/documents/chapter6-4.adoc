@@ -33,7 +33,7 @@ include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/
 <3> 同じくアクセサを作成します。プロパティを private で宣言しているので、アクセサがないとプロパティを探し出すことができません。
 
 [source,java]
-.BookOnDbImpl.java.java
+.BookOnDbImpl.java
 ----
 include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/dataaccess/BookOnDbImpl.java[]
 ----
