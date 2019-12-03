@@ -10,11 +10,9 @@
 - Chapter1 初めてのアプリ（単語帳アプリ）
 - Chapter2 （機能追加）単語登録・削除機能追加
 - Chapter3 コードの整理
-- Chapter4  （機能追加）単語をファイルに保存する
-- Chapter5  （機能追加）単語をデータベースに保存する
-- Chapter6  （機能追加）Spring Framework適用１（DI）
-- Chapter7  （機能追加）Spring Framework適用２（AOP）
-
-
-
-
+- Chapter4 （機能追加）単語をファイルに保存する
+- Chapter5 （機能追加）単語をデータベースに保存する
+- Chapter6 Spring Framework適用１（DI）
+- Chapter7 Spring Framework適用２（AOP）
+- Chapter8 （機能追加）サービスをWebへ公開する
+- Chapter ex1 C#(Windows Forms)からサービスを利用する
