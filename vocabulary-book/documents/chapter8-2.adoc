@@ -1,0 +1,43 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 8-2 Web の基礎知識
+
+=== Webについて
+
+=== URLとIPアドレス
+
+=== ブラウザについて
+
+=== HTML の基本構造
+
+=== 要素（タグ）と属性（アトリビュート）
+
+=== スタイル
+
+=== レイアウト
+
+=== フォーム
+
+=== POSTとGET
+
+=== Web サーバーと Java コンテナ
+
+
+
+
+=== 次のセクションでは…
+
+Spring Framework のコーディング方法を学びます。
+
+* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
+
+=== リンク
+
+* link:chapter8-1.html[Chapter 8-1 （機能追加）サービスを Web に公開する]
+* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
+* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
+* link:chapter8-4.html[Chapter 8-4 コーディング例]
+* link:chapter8-5.html[Chapter 8-5 テストの修正]
+* link:chapter8-6.html[Chapter 8-6 テストのコーディング例]

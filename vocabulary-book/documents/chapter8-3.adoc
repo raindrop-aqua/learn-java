@@ -1,0 +1,97 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 8-3 コーディングのヒント
+
+=== ライブラリの追加
+
+この Chapter をすすめるためにはライブラリの追加が必要です。以下のライブラリをプロジェクトに追加してください。
+
+
+
+=== Servlet（サーブレット） の作成
+
+利用者から呼び出されるプログラムを Servlet（サーブレット）と呼びます。
+HttpServlet クラスなどを継承したクラスを指定することができます。
+
+[source,java]
+----
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/Hint1.java[]
+----
+<1> form によって指定されたパラメータを取得することができます。
+<2> Spring Framework の設定ファイルを後述の web.xml に任せるので、そこから設定内容を取得します。
+<3> 遷移後のページに値を送ることができます。
+<4> 指定のページに遷移します。
+
+=== JSP(Java Server Pages)
+JSP は HTML 内に Java のコードを埋め込むことができます。パラメータを設定して、Servlet に渡したり、Servlet の処理結果を出力することができます。
+実際は JSP で記述した内容は HTML 部分も含めてすべて Java のサーブレットに変換されます。
+
+[source,html]
+.hint1.jsp
+----
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/hint1.jsp[]
+----
+(1) get メソッドでは URL の後ろにパラメータを追加して値を送ります。
+
+(2) form によってパラメータを送信することができます。
+
+(3) ``${ value }`` ととすることで、Servlet から送出した値を取得することができます。
+
+=== web.xml（設定ファイル）
+
+==== Servlet の定義とマッピング
+web.xml ファイルでサーブレットを定義して URL と紐付けることで、その URL が呼び出されたときにサーブレットが動作します。
+
+==== Spring Framework 設定ファイルの読み込み
+
+前回までの Chapter ではプログラム内で Spring Framework の設定ファイル（applicationContext.xml）を読み込んでいましたが、
+この読み込みも web.xml で行うことができます。
+
+==== welcome-file-list について
+個々のセクションにファイルを定義しておくと、`` http://example.com/ ``のように、呼び出すリソースを省略した際、自動的に呼び出すファイルを指定できます。
+ここでは JSP を指定していますが、 HTML なども指定することができます。
+
+[source,xml]
+.web.xml
+----
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/web.xml[]
+----
+(1) サーブレットを定義します。特定のクラスを指定できるようにパッケージを含めて指定します。
+(2) URLとサーブレットの紐付けを行います。
+(3) リソースを指定しない場合に自動的に呼び出すファイルを指定できます。複数指定することができます。
+(4) Spring Framework の設定ファイルを指定します。
+(5) Spring Framework の設定ファイルを読み込むように設定します。
+
+=== サーバーの作成
+今回は、Jetty という Java コンテナ（サーバー）を利用します。
+サーバーのインストールなく、簡単な設定を記述することで利用することができます。
+アプリケーションに組み込んで利用することができます。
+
+[source,java]
+.MainServer.java
+----
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/Hint2.java[]
+----
+
+<1> コンテキストルートという、アプリケーションのルート位置を設定します。
+<2> 外部に公開する場所の設定を行います。
+<3> web.xml ファイルの場所を指定します。
+<4> ポート番号を指定します。定番は ``8080`` です
+
+=== 次のセクションでは…
+
+次のセクションでは、コーディング例を示します。
+自分がコーディングした内容と比較してみましょう。
+
+* link:chapter8-4.html[Chapter 8-4 コーディング例]
+
+== リンク
+
+* link:chapter8-1.html[Chapter 8-1 （機能追加）サービスを Web に公開する]
+* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
+* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
+* link:chapter8-4.html[Chapter 8-4 コーディング例]
+* link:chapter8-5.html[Chapter 8-5 テストの修正]
+* link:chapter8-6.html[Chapter 8-6 テストのコーディング例]
