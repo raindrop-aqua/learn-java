@@ -12,17 +12,17 @@ public class BookOnMemoryImpl implements BookAccessor {
     private Map<String, String> memory = new HashMap<String, String>();
 
     @Override
-    public String findBy(String queryWord) {
+    public String findBy(final String queryWord) {
         return memory.get(queryWord);
     }
 
     @Override
-    public void add(String newWord, String newTranslatedWord) {
+    public void add(final String newWord, final String newTranslatedWord) {
         memory.put(newWord, newTranslatedWord);
     }
 
     @Override
-    public void delete(String deleteWord) {
+    public void delete(final String deleteWord) {
         memory.remove(deleteWord);
     }
 }

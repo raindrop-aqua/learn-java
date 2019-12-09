@@ -14,7 +14,7 @@ public class TranslateLogicImpl implements TranslateLogic {
     private BookAccessor book = new BookOnMemoryImpl();
 
     @Override
-    public TranslateLogicOutDTO execute(TranslateLogicInDTO params) {
+    public TranslateLogicOutDTO execute(final TranslateLogicInDTO params) {
         TranslateLogicOutDTO output = new TranslateLogicOutDTO();
         output.setTerminate(false);
 

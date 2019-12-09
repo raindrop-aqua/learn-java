@@ -18,12 +18,12 @@ public class TranslateLogicImpl implements TranslateLogic {
     }
 
     // dataSourceプロパティへのアクセサ<3>
-    public void setBook(BookAccessor book) {
+    public void setBook(final BookAccessor book) {
         this.book = book;
     }
 
     @Override
-    public TranslateLogicOutDTO execute(TranslateLogicInDTO params) {
+    public TranslateLogicOutDTO execute(final TranslateLogicInDTO params) {
         TranslateLogicOutDTO output = new TranslateLogicOutDTO();
         output.setTerminate(false);
 

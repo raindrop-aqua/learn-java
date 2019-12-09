@@ -13,14 +13,14 @@ public class BookOnFileImpl implements BookAccessor {
     private Map<String, String> memory = new HashMap<String, String>();
 
     @Override
-    public String findBy(String queryWord) {
+    public String findBy(final String queryWord) {
         memory.clear();
         readAll();
         return memory.get(queryWord);
     }
 
     @Override
-    public void add(String newWord, String newTranslatedWord) {
+    public void add(final String newWord, final String newTranslatedWord) {
         // ファイルの内容をメモリに全て読み込み<2>
         readAll();
         // メモリに書き込み
@@ -34,7 +34,7 @@ public class BookOnFileImpl implements BookAccessor {
     }
 
     @Override
-    public void delete(String deleteWord) {
+    public void delete(final String deleteWord) {
         // ファイルの内容をメモリに全て読み込み<2>
         readAll();
         // メモリより削除

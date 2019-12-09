@@ -18,12 +18,12 @@ public interface BookAccessor {
      * @param newWord 追加する語句
      * @param newTranslatedWord 追加する翻訳語
      */
-    void add(String newWord, String newTranslatedWord);
+    void add(final String newWord, final String newTranslatedWord);
 
     /**
      * 語句を削除する
      *
      * @param deleteWord 削除する語句
      */
-    void delete(String deleteWord);
+    void delete(final String deleteWord);
 }

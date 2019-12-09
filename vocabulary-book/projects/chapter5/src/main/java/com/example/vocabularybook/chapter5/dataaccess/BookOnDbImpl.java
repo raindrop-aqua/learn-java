@@ -15,7 +15,7 @@ public class BookOnDbImpl implements BookAccessor {
     }
 
     @Override
-    public String findBy(String queryWord) {
+    public String findBy(final String queryWord) {
         String result = null;
         String sql = "select * from book where word1 = ?";
 
@@ -34,7 +34,7 @@ public class BookOnDbImpl implements BookAccessor {
     }
 
     @Override
-    public void add(String newWord, String newTranslatedWord) {
+    public void add(final String newWord, final String newTranslatedWord) {
         String sql = "insert into book (word1, word2) values (?, ?)";
 
         try (Connection con = getConnection();
@@ -48,7 +48,7 @@ public class BookOnDbImpl implements BookAccessor {
     }
 
     @Override
-    public void delete(String deleteWord) {
+    public void delete(final String deleteWord) {
         String sql = "delete from book where word1 = ?";
 
         try (Connection con = getConnection();

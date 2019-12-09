@@ -13,5 +13,5 @@ public interface TranslateLogic {
      * @param params 翻訳パラメータ
      * @return 翻訳実行結果
      */
-    TranslateLogicOutDTO execute(TranslateLogicInDTO params);
+    TranslateLogicOutDTO execute(final TranslateLogicInDTO params);
 }
