@@ -15,4 +15,4 @@
 - Chapter6 Spring Framework適用１（DI）
 - Chapter7 Spring Framework適用２（AOP）
 - Chapter8 （機能追加）サービスをWebへ公開する
-- Chapter ex1 C#(Windows Forms)からサービスを利用する
+- ChapterEx1 C#(Windows Forms)からサービスを利用する
