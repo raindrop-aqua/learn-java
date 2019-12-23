@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <!-- サーブレットの定義 -->
     <servlet>
         <servlet-name>bookTranslate</servlet-name>
         <servlet-class>com.example.vocabularybook.chapter8.handler.BookTranslateServlet</servlet-class>
@@ -17,6 +18,7 @@
         <servlet-class>com.example.vocabularybook.chapter8.handler.BookDeleteServlet</servlet-class>
     </servlet>
 
+    <!-- サーブレットとURLのマッピング -->
     <servlet-mapping>
         <servlet-name>bookTranslate</servlet-name>
         <url-pattern>/translate</url-pattern>
@@ -30,15 +32,18 @@
         <url-pattern>/delete</url-pattern>
     </servlet-mapping>
 
+    <!-- コンテキストルートにアクセスしたときに読み込むファイル -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <!-- Spring Framework の設定ファイル -->
     <context-param>
         <param-name>contextConfiguration</param-name>
         <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
-    
+
+    <!-- Spring Framework の設定ファイルを読み込み -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>

@@ -1,0 +1,10 @@
+<!-- Spring Framework の設定ファイル -->
+<context-param>
+    <param-name>contextConfiguration</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+</context-param>
+
+<!-- Spring Framework の設定ファイルを読み込み -->
+<listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>

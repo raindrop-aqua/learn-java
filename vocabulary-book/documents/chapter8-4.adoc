@@ -4,47 +4,64 @@
 
 == Chapter 8-4 コーディング例
 
+[source,java]
+.MainServer.java
+----
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/MainServer.java[]
+----
+
+=== web.xml
+
 [source,xml]
-.applicationContext.xml
+.webapp/WEB-INF/web.xml
 ----
-include::../projects/chapter6/src/main/resources/applicationContext.xml[]
+include::../projects/chapter8/src/main/java/webapp/WEB-INF/web.xml[]
 ----
-(1) データベースへの接続情報を記載します。以前のchapterではクラス内で指定していましたが、設定ファイルに情報を外だしすることができました。
 
-(2) データアクセスの設定を記述します。データベース接続のID を ds プロパティに設定しています。
-
-(3) ビジネスロジックの設定を記述します。データアクセスのIDを book プロパティに設定しています。
+=== Servlet（サーブレット）
 
 [source,java]
-.Main.java
+.BookTranslateServlet.java
 ----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/Main.java[]
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/handler/BookTranslateServlet.java[]
 ----
-<1> Spring Framework の設定ファイルを読み込みます。
-<2> Spring Framework からインスタンスを取得します。
+<1> form で送出したパラメータを読み込みます。
+<2> Spring Bean の読み込みをアプリケーション・サーバーに任せたので、利用するときもアプリケーション・サーバーから取得します。
+<3> Spring Bean を取得することができたので、ビジネスロジックを実行できます。
+<4> 処理結果を属性値として設定します。
+<5> 上記処理が終わったあとの画面遷移先を設定します。
 
 [source,java]
-.TranslateLogicImpl.java
+.BookAddServlet.java
 ----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/logic/TranslateLogicImpl.java[]
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/handler/BookAddServlet.java[]
 ----
-<1> プロパティを宣言します。
-<2> プロパティへのアクセサを作成します。
-<3> 同じくアクセサを作成します。プロパティを private で宣言しているので、アクセサがないとプロパティを探し出すことができません。
 
 [source,java]
-.BookOnDbImpl.java
+.BookDeleteServlet.java
 ----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/dataaccess/BookOnDbImpl.java[]
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/handler/BookDeleteServlet.java[]
 ----
-<1> プロパティを宣言します。
-<2> プロパティへのアクセサを作成します。
-<3> 同じくアクセサを作成します。プロパティを private で宣言しているので、アクセサがないとプロパティを探し出すことができません。
-<4> 以前の chapter ではこの関数内でデータベース接続を確立していましたが、データベース接続をプロパティ経由で取得するように変更しました。
+
+=== JSP(Java Server Pages)
+
+[source,html]
+.webapp/index.jsp
+----
+include::../projects/chapter8/src/main/java/webapp/index.jsp[]
+----
+リソースを取得（翻訳結果を取得）するときなど、更新を伴わないアクセスのときは Get メソッドを利用してください。
+
+[source,html]
+.webapp/management.jsp
+----
+include::../projects/chapter8/src/main/java/webapp/management.jsp[]
+----
+単語の追加や削除は、リソースに変化を与えるため、Post メソッドを利用します。
 
 === 次のセクションでは…
 
-では、次はテストの修正です。Spring Framework を利用することになっても、テストの方法は大きく変わりません。
+では、次はテストの修正です。Web へのアクセスを伴うテストは、今までのテストとは若干異なります。
 
 * link:chapter8-5.html[Chapter 8-5 テストの修正]
 

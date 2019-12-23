@@ -29,7 +29,7 @@
 
 === 次のセクションでは…
 
-Spring Framework のコーディング方法を学びます。
+ Servlet, JSP を利用した Web コーディングの方法を学びます。
 
 * link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
 

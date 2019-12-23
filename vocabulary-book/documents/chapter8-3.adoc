@@ -7,8 +7,44 @@
 === ライブラリの追加
 
 この Chapter をすすめるためにはライブラリの追加が必要です。以下のライブラリをプロジェクトに追加してください。
-
-
+====
+* aopalliance:aopalliance:1.0
+* com.h2database:h2:1.4.196
+* commons-logging:commons-logging:1.1.1
+* javax.annotation:javax.annotation-api:1.3
+* javax.servlet:javax.servlet-api:3.1.0
+* junit:junit:4.12
+* org.eclipse.jdt:ecj:3.17.0
+* org.eclipse.jetty.toolchain:jetty-schemas:3.1.2
+* org.eclipse.jetty:apache-jsp:9.4.22.v20191022
+* org.eclipse.jetty:jetty-annotations:9.4.22.v20191022
+* org.eclipse.jetty:jetty-http:9.4.22.v20191022
+* org.eclipse.jetty:jetty-io:9.4.22.v20191022
+* org.eclipse.jetty:jetty-jndi:9.4.22.v20191022
+* org.eclipse.jetty:jetty-plus:9.4.22.v20191022
+* org.eclipse.jetty:jetty-security:9.4.22.v20191022
+* org.eclipse.jetty:jetty-server:9.4.22.v20191022
+* org.eclipse.jetty:jetty-servlet:9.4.22.v20191022
+* org.eclipse.jetty:jetty-util:9.4.22.v20191022
+* org.eclipse.jetty:jetty-webapp:9.4.22.v20191022
+* org.eclipse.jetty:jetty-xml:9.4.22.v20191022
+* org.hamcrest:hamcrest-core:1.3
+* org.mortbay.jasper:apache-el:8.5.40
+* org.mortbay.jasper:apache-jsp:8.5.40
+* org.ow2.asm:asm:7.1
+* org.ow2.asm:asm-analysis:7.1
+* org.ow2.asm:asm-commons:7.1
+* org.ow2.asm:asm-tree:7.1
+* org.springframework:spring-aop:3.0.2.RELEASE
+* org.springframework:spring-asm:3.0.2.RELEASE
+* org.springframework:spring-beans:3.0.2.RELEASE
+* org.springframework:spring-context:3.0.2.RELEASE
+* org.springframework:spring-core:3.0.2.RELEASE
+* org.springframework:spring-expression:3.0.2.RELEASE
+* org.springframework:spring-jdbc:3.0.2.RELEASE
+* org.springframework:spring-tx:3.0.2.RELEASE
+* org.springframework:spring-web:3.0.2.RELEASE
+====
 
 === Servlet（サーブレット） の作成
 
@@ -20,9 +56,8 @@ HttpServlet クラスなどを継承したクラスを指定することがで�
 include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/Hint1.java[]
 ----
 <1> form によって指定されたパラメータを取得することができます。
-<2> Spring Framework の設定ファイルを後述の web.xml に任せるので、そこから設定内容を取得します。
-<3> 遷移後のページに値を送ることができます。
-<4> 指定のページに遷移します。
+<2> 遷移後のページに値を送ることができます。
+<3> 指定のページに遷移します。
 
 === JSP(Java Server Pages)
 JSP は HTML 内に Java のコードを埋め込むことができます。パラメータを設定して、Servlet に渡したり、Servlet の処理結果を出力することができます。
@@ -37,7 +72,7 @@ include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/
 
 (2) form によってパラメータを送信することができます。
 
-(3) ``${ value }`` ととすることで、Servlet から送出した値を取得することができます。
+(3) ``${ value }`` とすることで、Servlet から送出した値を取得することができます。
 
 === web.xml（設定ファイル）
 
@@ -49,6 +84,15 @@ web.xml ファイルでサーブレットを定義して URL と紐付けるこ�
 前回までの Chapter ではプログラム内で Spring Framework の設定ファイル（applicationContext.xml）を読み込んでいましたが、
 この読み込みも web.xml で行うことができます。
 
+このヒントのページでは Spring Framework を利用していないため、指定していませんが、web.xml に以下の記述を加えることで、
+applicationContext.xml を自動的に読み込みます。
+
+[source,xml]
+.web.xml の一部
+----
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/WEB-INF/hint1.xml[]
+----
+
 ==== welcome-file-list について
 個々のセクションにファイルを定義しておくと、`` http://example.com/ ``のように、呼び出すリソースを省略した際、自動的に呼び出すファイルを指定できます。
 ここでは JSP を指定していますが、 HTML なども指定することができます。
@@ -56,13 +100,13 @@ web.xml ファイルでサーブレットを定義して URL と紐付けるこ�
 [source,xml]
 .web.xml
 ----
-include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/web.xml[]
+include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/WEB-INF/web.xml[]
 ----
 (1) サーブレットを定義します。特定のクラスを指定できるようにパッケージを含めて指定します。
+
 (2) URLとサーブレットの紐付けを行います。
+
 (3) リソースを指定しない場合に自動的に呼び出すファイルを指定できます。複数指定することができます。
-(4) Spring Framework の設定ファイルを指定します。
-(5) Spring Framework の設定ファイルを読み込むように設定します。
 
 === サーバーの作成
 今回は、Jetty という Java コンテナ（サーバー）を利用します。
@@ -70,7 +114,7 @@ include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/
 アプリケーションに組み込んで利用することができます。
 
 [source,java]
-.MainServer.java
+.Hint2.java
 ----
 include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/hints/Hint2.java[]
 ----
@@ -78,7 +122,16 @@ include::../projects/chapter8/src/main/java/com/example/vocabularybook/chapter8/
 <1> コンテキストルートという、アプリケーションのルート位置を設定します。
 <2> 外部に公開する場所の設定を行います。
 <3> web.xml ファイルの場所を指定します。
-<4> ポート番号を指定します。定番は ``8080`` です
+<4> ポート番号を指定します。通常はは ``8080`` です
+
+=== アプリケーションの実行
+
+MainServer クラスを実行すると、アプリケーション・サーバーの起動プロセスが始まります。
+しばらくすると、待ち受けの状態になります。
+
+ここで、Web ブラウザを開き、アドレスバーに link:http://localhost:8080/[http://localhost:8080/] を入力して下さい。
+hint1.jsp 画面が表示されますので、入力エリアに入力して、ボタンを押して下さい。
+「こんにちは（入力内容）」と表示されれば成功です。
 
 === 次のセクションでは…
 

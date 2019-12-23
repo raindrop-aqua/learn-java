@@ -13,9 +13,9 @@ public class Hint2 {
         // コンテキストルートの設定<1>
         context.setContextPath("/");
         // JSP など、外部に公開するファイルの置き場所を設定<2>
-        context.setWar("src/main/java/webapp");
+        context.setWar("src/main/java/com/example/vocabularybook/chapter8/hints/");
         // web.xml ファイルの場所を設定<3>
-        context.setDescriptor("src/main/java/webapp/WEB-INF/web.xml");
+        context.setDescriptor("src/main/java/com/example/vocabularybook/chapter8/hints//WEB-INF/web.xml");
         context.setConfigurations(new Configuration[]{
                 new WebXmlConfiguration(),
                 new AnnotationConfiguration(),

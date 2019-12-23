@@ -12,17 +12,9 @@
 include::../projects/chapter6/src/test/java/com/example/vocabularybook/chapter6/logic/TranslateLogicTest.java[]
 ----
 
-=== データアクセス層のテスト
-
-.BookOnDbImplTest.java
-[source,java,indent=0]
-----
-include::../projects/chapter6/src/test/java/com/example/vocabularybook/chapter6/dataaccess/BookOnDbImplTest.java[]
-----
-
-
 === 次のチャプターでは…
-Spring Framework のもう一つの特徴であるAOPについて学びましょう。
+
+
 
 * link:chapterEx1.html[Chapter Extended 1 C#(Windows Forms)からサービスを利用する]
 

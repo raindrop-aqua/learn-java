@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- サーブレットの定義(1) -->
+    <servlet>
+        <servlet-name>hint1Servlet</servlet-name>
+        <servlet-class>com.example.vocabularybook.chapter8.hints.Hint1</servlet-class>
+    </servlet>
+    <!-- サーブレットとURLの紐付け(2) -->
+    <servlet-mapping>
+        <servlet-name>hint1Servlet</servlet-name>
+        <url-pattern>/hint1</url-pattern>
+    </servlet-mapping>
+    <!-- リソースの指定を省略した場合、呼び出されるファイル(3) -->
+    <welcome-file-list>
+        <welcome-file>hint1.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
