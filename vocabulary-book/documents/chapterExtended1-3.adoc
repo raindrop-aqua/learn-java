@@ -2,60 +2,52 @@
 :source-highlighter: coderay
 :experimental:
 
-== Chapter 6-3 コーディングのヒント
+== Chapter Extended 1-3 IDLの定義とコード生成
 
-=== Spring Bean
+=== IDLを利用してインターフェイスを定義する
 
-Spring Framework によって管理されるクラスのことを Bean と呼びます。
-Path という String 型のメンバ変数（プロパティ）を持つクラスを宣言します。
 
-[source,java]
+[source,c++]
+.book.thrift
 ----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/hints/Hint1.java[]
-----
-
-=== applicationContext.xml（設定ファイル）
-
-クラスを Bean として宣言し、設定ファイル中で自由に利用することができます。
-
-[source,xml]
-.applicationContext.xml
-----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/hints/applicationContext.xml[]
+include::../projects/chapterExtended1/src/idl/book.thrift[]
 ----
 
-(1) 前述の Hint1 クラスを hintBean1 として Spring Framework に登録・宣言します。
-プロパティにも代入しておきます。
+====
+namespace::
+コードを生成するときに出力するパッケージや名前空間を言語ごとに指定することができます。
 
-(2) Hint1 クラスを Hint2 クラスのプロパティに代入します。
+service::
+公開するサービスを記述します。
+引数の先頭には番号をつけて下さい。将来引数の数が増えた場合、この番号で引数を追従します。
 
-=== Spring Bean を利用する
+struct::
+今回は定義しませんでしたが、独自の型を定義することができます。
 
-設定ファイルで宣言したファイルを利用してみましょう。
+====
 
-[source,java]
+=== コード生成
+
+今回はJavaと.NET(C#)向けに出力しています。
+Thriftコンパイラはホームページでlink:https://thrift.apache.org/download[ダウンロード]することができます。
+macOSはbrewなどで手に入れることができます。
+
+[source]
+.build.sh
 ----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/hints/Hint2.java[]
+include::../projects/chapterExtended1/src/idl/build.sh[lines=4]
 ----
-<1> 設定ファイルを読み込みます。
-<2> 設定ファイル内で宣言されている Bean のインスタンスを取得します。
-<3> 上記で取得したインスタンスの関数（メソッド）を実行します
-
-=== ライブラリの追加
-Spring Framework を利用するためには、ライブラリの追加が必要です。教材格納場所から jar ファイルをダウンロードし、Eclipse に追加してください。
 
 === 次のセクションでは…
 
-次のセクションでは、コーディング例を示します。
-自分がコーディングした内容と比較してみましょう。
+サーバー側のコーディング例を紹介します。
 
-* link:chapter6-4.html[Chapter 6-4 コーディング例]
+* link:chapterExtended1-4.html[Chapter Extended 1-4 サーバー側コーディング例]
 
-== リンク
+=== リンク
 
-* link:chapter8-1.html[Chapter 8-1 （機能追加）サービスを Web に公開する]
-* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
-* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
-* link:chapter8-4.html[Chapter 8-4 コーディング例]
-* link:chapter8-5.html[Chapter 8-5 テストの修正]
-* link:chapter8-6.html[Chapter 8-6 テストのコーディング例]
+* link:chapterExtended1-1.html[Chapter Extended 1-1 C#(Windows Forms)からサービスを利用する]
+* link:chapterExtended1-2.html[Chapter Extended 1-2 概要]
+* link:chapterExtended1-3.html[Chapter Extended 1-3 IDLの定義とコード生成]
+* link:chapterExtended1-4.html[Chapter Extended 1-4 サーバー側コーディング例]
+* link:chapterExtended1-5.html[Chapter Extended 1-5 クライアント側コーディング例]

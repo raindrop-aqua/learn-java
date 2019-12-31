@@ -54,7 +54,8 @@ asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/ch
 asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter8-5.pdf chapter8-5.adoc
 asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapter8-6.pdf chapter8-6.adoc
 
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-1.pdf chapterExtended1-1.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-2.pdf chapterExtended1-2.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-3.pdf chapterExtended1-3.adoc
-#asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-4.pdf chapterExtended1-4.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-1.pdf chapterExtended1-1.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-2.pdf chapterExtended1-2.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-3.pdf chapterExtended1-3.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-4.pdf chapterExtended1-4.adoc
+asciidoctor-pdf -r asciidoctor-pdf-cjk -r asciidoctor-diagram -b pdf -o build/chapterExtended1-5.pdf chapterExtended1-5.adoc

@@ -1,0 +1,23 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter Extended 1-5 クライアント側コーディング例]
+
+
+
+
+
+
+=== End of contents
+
+追加のチャプターを含めて、これでこのテキストは全て完了です。
+ここまでお付き合いいただき、ありがとうございました。
+
+=== リンク
+
+* link:chapterExtended1-1.html[Chapter Extended 1-1 C#(Windows Forms)からサービスを利用する]
+* link:chapterExtended1-2.html[Chapter Extended 1-2 概要]
+* link:chapterExtended1-3.html[Chapter Extended 1-3 IDLの定義とコード生成]
+* link:chapterExtended1-4.html[Chapter Extended 1-4 サーバー側コーディング例]
+* link:chapterExtended1-5.html[Chapter Extended 1-5 クライアント側コーディング例]

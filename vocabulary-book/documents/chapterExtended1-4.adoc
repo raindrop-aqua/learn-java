@@ -2,57 +2,104 @@
 :source-highlighter: coderay
 :experimental:
 
-== Chapter 6-4 コーディング例
+== Chapter Extended 1-4 サーバー側コーディング例
+
+=== ライブラリの追加
+Spring Framework を利用するためには、ライブラリの追加が必要です。教材格納場所から jar ファイルをダウンロードし、Eclipse に追加してください。
+
+====
+* jetty-servlet-9.4.22.v20191022.jar
+* jetty-webapp-9.4.22.v20191022.jar
+* jetty-security-9.4.22.v20191022.jar
+* jetty-util-9.4.22.v20191022.jar
+* jetty-io-9.4.22.v20191022.jar
+* jetty-xml-9.4.22.v20191022.jar
+* jetty-plus-9.4.22.v20191022.jar
+* jetty-server-9.4.22.v20191022.jar
+* jetty-schemas-3.1.2.jar
+* jetty-http-9.4.22.v20191022.jar
+* jetty-annotations-9.4.22.v20191022.jar
+* jetty-jndi-9.4.22.v20191022.jar
+* asm-tree-7.1.jar
+* jsoup-1.12.1.jar
+* aopalliance-1.0.jar
+* asm-7.1.jar
+* asm-analysis-7.1.jar
+* asm-commons-7.1.jar
+* spring-context-3.0.2.RELEASE.jar
+* spring-core-3.0.2.RELEASE.jar
+* spring-jdbc-3.0.2.RELEASE.jar
+* spring-asm-3.0.2.RELEASE.jar
+* spring-aop-3.0.2.RELEASE.jar
+* spring-tx-3.0.2.RELEASE.jar
+* spring-web-3.0.2.RELEASE.jar
+* spring-beans-3.0.2.RELEASE.jar
+* spring-expression-3.0.2.RELEASE.jar
+* apache-jsp-9.4.22.v20191022.jar
+* apache-jsp-8.5.40.jar
+* apache-el-8.5.40.jar
+* ecj-3.17.0.jar
+* libthrift-0.13.0.jar
+* httpcore-4.4.10.jar
+* httpclient-4.5.6.jar
+* junit-4.12.jar
+* hamcrest-core-1.3.jar
+* javax.servlet-api-3.1.0.jar
+* javax.annotation-api-1.3.2.jar
+* slf4j-api-1.7.25.jar
+* commons-logging-1.2.jar
+* commons-codec-1.10.jar
+* h2-1.4.196.jar
+====
+
+=== web.xml
 
 [source,xml]
-.applicationContext.xml
+.webapp/WEB-INF/web.xml
 ----
-include::../projects/chapter6/src/main/resources/applicationContext.xml[]
+include::../projects/chapterExtended1/src/main/java/webapp/WEB-INF/web.xml[]
 ----
-(1) データベースへの接続情報を記載します。以前のchapterではクラス内で指定していましたが、設定ファイルに情報を外だしすることができました。
 
-(2) データアクセスの設定を記述します。データベース接続のID を ds プロパティに設定しています。
+(1) API呼び出し用のサーブレットを定義します。
 
-(3) ビジネスロジックの設定を記述します。データアクセスのIDを book プロパティに設定しています。
+(2) URLとサーブレットを紐付けます。ここでは``api``としました。
 
-[source,java]
-.Main.java
-----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/Main.java[]
-----
-<1> Spring Framework の設定ファイルを読み込みます。
-<2> Spring Framework からインスタンスを取得します。
+
+=== Servlet（サーブレット）
 
 [source,java]
-.TranslateLogicImpl.java
+.BookApiServlet.java
 ----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/logic/TranslateLogicImpl.java[]
+include::../projects/chapterExtended1/src/main/java/com/example/vocabularybook/chapter_extended1/handler/BookApiServlet.java[]
 ----
-<1> プロパティを宣言します。
-<2> プロパティへのアクセサを作成します。
-<3> 同じくアクセサを作成します。プロパティを private で宣言しているので、アクセサがないとプロパティを探し出すことができません。
+<1> Thriftを利用することをクライアントに伝えるため、ContentTypeに設定を行います。これは必須ではありません。
+<2> Thrift経由の要求を受け取るハンドラークラスを作成します。
+<3> リクエストとレスポンスをThriftが自由にできるように、Input、OutputをThriftに渡します。
+<4> この時点で通信が始まります。
+
+=== APIハンドラー
+
+IDLをコンパイルするとソースコードが生成されますが、あくまでも通信部分の処理だけなので、
+アプリで行う処理は自分で記述する必要があります。ただし、今までサーブレットで記述してきた方法とほとんど変わりありません。
+サーブレットコンテキストからSpring Framework 経由でビジネスロジッククラスを呼び出し、該当の関数を利用するだけです。
 
 [source,java]
-.BookOnDbImpl.java
+.BookApiHandler.java
 ----
-include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/dataaccess/BookOnDbImpl.java[]
+include::../projects/chapterExtended1/src/main/java/com/example/vocabularybook/chapter_extended1/handler/api/BookApiHandler.java[]
 ----
-<1> プロパティを宣言します。
-<2> プロパティへのアクセサを作成します。
-<3> 同じくアクセサを作成します。プロパティを private で宣言しているので、アクセサがないとプロパティを探し出すことができません。
-<4> 以前の chapter ではこの関数内でデータベース接続を確立していましたが、データベース接続をプロパティ経由で取得するように変更しました。
+
 
 === 次のセクションでは…
 
-では、次はテストの修正です。Spring Framework を利用することになっても、テストの方法は大きく変わりません。
+クライアント側のコーディング例を紹介します。
 
-* link:chapter6-5.html[Chapter 6-5 テストの修正]
+* link:chapterExtended1-5.html[Chapter Extended 1-5 クライアント側コーディング例]
 
 === リンク
 
-* link:chapter8-1.html[Chapter 8-1 （機能追加）サービスを Web に公開する]
-* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
-* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
-* link:chapter8-4.html[Chapter 8-4 コーディング例]
-* link:chapter8-5.html[Chapter 8-5 テストの修正]
-* link:chapter8-6.html[Chapter 8-6 テストのコーディング例]
+* link:chapterExtended1-1.html[Chapter Extended 1-1 C#(Windows Forms)からサービスを利用する]
+* link:chapterExtended1-2.html[Chapter Extended 1-2 概要]
+* link:chapterExtended1-3.html[Chapter Extended 1-3 IDLの定義とコード生成]
+* link:chapterExtended1-4.html[Chapter Extended 1-4 サーバー側コーディング例]
+* link:chapterExtended1-5.html[Chapter Extended 1-5 クライアント側コーディング例]

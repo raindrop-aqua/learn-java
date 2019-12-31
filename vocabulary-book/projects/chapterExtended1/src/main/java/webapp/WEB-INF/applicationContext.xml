@@ -12,17 +12,17 @@
     </bean>
 
     <!-- データアクセス(2) -->
-    <bean id="bookDao" class="com.example.vocabularybook.chapter8.dataaccess.BookOnDbImpl">
+    <bean id="bookDao" class="com.example.vocabularybook.chapter_extended1.dataaccess.BookOnDbImpl">
         <property name="ds" ref="dataSource"/>
     </bean>
 
     <!-- ビジネスロジック(3) -->
-    <bean id="bookLogic" class="com.example.vocabularybook.chapter8.logic.TranslateLogicImpl">
+    <bean id="bookLogic" class="com.example.vocabularybook.chapter_extended1.logic.TranslateLogicImpl">
         <property name="book" ref="aopBookDao"/>
     </bean>
 
     <!-- ロギングクラス -->
-    <bean id="logger" class="com.example.vocabularybook.chapter8.logging.Logger">
+    <bean id="logger" class="com.example.vocabularybook.chapter_extended1.logging.Logger">
     </bean>
 
     <!-- AOP設定（データアクセス） -->

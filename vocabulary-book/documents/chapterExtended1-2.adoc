@@ -2,33 +2,87 @@
 :source-highlighter: coderay
 :experimental:
 
-== Chapter 8-2 Spring Framework とは
+== Chapter Extended 1-2 概要
 
-=== Spring Framework について
+=== アプリ間通信について
 
-Spring Framework は Java で作られたライブラリです。
-DI と AOP の２つの要素が Spring Framework を象徴する２つの機能です。今 chapter では、DI について説明を行います。
+古くから、アプリ間で情報をやり取りしたいというニーズはあったようです。
+やり取りされるのは、なにもデータだけではありません。
+アプリの機能そのものも共有したいという要求があるのです。
 
-=== DI
+他のアプリに実装されている機能を使いたいと思ったことはありませんか？
+それが実現できれば、コードの重複を防げますし、データの秘匿性を保つこともできます。
 
-Java におけるプログラミングの巧拙はつまるところ「クラスの管理」ということになります。
-Spring Framework はクラスそのものを管理する機能を持っています。
+=== RPCについて
 
-設定ファイルを利用することで、インスタンスの生成やプロパティを設定することができます。
+別のメモリ空間やネットワーク越しのアプリの機能を、あたかも関数を利用するかのごとく呼び出すことができる仕組みを
+RPC（リモート・プロシージャ・コール）と呼びます。
 
-Spring Framework の作法に従ってコーディングを行うと、クラス間の依存度を低く保ちながら、拡張性を持つプロジェクトを構築することができます。
+これを実現するライブラリはいくつかあります。
+以下に少しだけ紹介します。
+
+.RPCライブラリ
+
+|===
+|ライブラリ名|開発・メンテナ
+
+|gRPC
+|Google
+
+|Thrift
+|Apache
+
+|Apache Avro
+|Apache
+
+|===
+
+=== Thrift（スリフト）について
+
+ThriftはFacebookが開発し、Apacheに寄贈した、オープンソースのRPCライブラリです。
+
+==== IDL
+
+Thriftが特徴的なのは、IDL（インターフェイス定義言語）を使ってインターフェイス定義を記述し、
+Thriftのコンパイラにかけると、サーバー側、クライアント側の通信に関わるコードを自動生成してくれるところです。
+
+インターフェイスの定義は仕様書などで交わされますが、仕様書と実際のコードが乖離してしまうことは珍しくありません。
+ThriftのIDLはとても簡易な記法のため、直感的にどのような定義がされているかをつかむことができます。
+また、CSVのようなフラットなデータ構造だけではなく、階層構造を持つデータを扱うこともできます。
+
+==== 多言語への対応
+
+Thriftは多種多様な言語に対してコード生成を行うことができるため、
+例えば、サーバー側をJavaで記述し、クライアント側を``Swift``や``C#``などで記述することもできます。
+異なる言語間でも型情報は失われず、各言語の適切な型に変換されます。
+
+今チャプターでは、サーバー側をこれまで作成してきたJava、クライアント側をC#（Windows Forms）で作成します。
+
+==== 通信経路について
+
+http/https上でデータをやり取りするため、
+既存のネットワークをそのまま利用することができます。
+
+==== やり取りされるデータについて
+
+XMLやJSONなどのテキストベースのデータとは異なり、バイナリベースでデータをやり取りするため、
+データサイズが小さくすみ、パフォーマンスを犠牲にしません。
+
+==== アプリへの組み込み
+
+サーブレットとしてアプリに組み込むこともできるため、
+すでに運用されているアプリにも比較的簡単に組み込むことができます。
 
 === 次のセクションでは…
 
-Spring Framework のコーディング方法を学びます。
+ThriftのIDLでインターフェイスを定義し、コード生成を行います。
 
-* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
+* link:chapterExtended1-3.html[Chapter Extended 1-3 IDLの定義とコード生成]
 
 === リンク
 
-* link:chapter8-1.html[Chapter 8-1 （機能追加）サービスを Web に公開する]
-* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
-* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
-* link:chapter8-4.html[Chapter 8-4 コーディング例]
-* link:chapter8-5.html[Chapter 8-5 テストの修正]
-* link:chapter8-6.html[Chapter 8-6 テストのコーディング例]
+* link:chapterExtended1-1.html[Chapter Extended 1-1 C#(Windows Forms)からサービスを利用する]
+* link:chapterExtended1-2.html[Chapter Extended 1-2 概要]
+* link:chapterExtended1-3.html[Chapter Extended 1-3 IDLの定義とコード生成]
+* link:chapterExtended1-4.html[Chapter Extended 1-4 サーバー側コーディング例]
+* link:chapterExtended1-5.html[Chapter Extended 1-5 クライアント側コーディング例]
