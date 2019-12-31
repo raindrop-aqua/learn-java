@@ -19,7 +19,7 @@
     <input type="text" name="word" id="word" value="${word}">
     <input type="submit" value="削除">
 </form>
-<div>${result}</div>
+<div id="result">${result}</div>
 
 <a href="index.jsp">単語の翻訳</a>
 </body>

@@ -1,0 +1,34 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 8-2 Spring Framework とは
+
+=== Spring Framework について
+
+Spring Framework は Java で作られたライブラリです。
+DI と AOP の２つの要素が Spring Framework を象徴する２つの機能です。今 chapter では、DI について説明を行います。
+
+=== DI
+
+Java におけるプログラミングの巧拙はつまるところ「クラスの管理」ということになります。
+Spring Framework はクラスそのものを管理する機能を持っています。
+
+設定ファイルを利用することで、インスタンスの生成やプロパティを設定することができます。
+
+Spring Framework の作法に従ってコーディングを行うと、クラス間の依存度を低く保ちながら、拡張性を持つプロジェクトを構築することができます。
+
+=== 次のセクションでは…
+
+Spring Framework のコーディング方法を学びます。
+
+* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
+
+=== リンク
+
+* link:chapter8-1.html[Chapter 8-1 （機能追加）サービスを Web に公開する]
+* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
+* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
+* link:chapter8-4.html[Chapter 8-4 コーディング例]
+* link:chapter8-5.html[Chapter 8-5 テストの修正]
+* link:chapter8-6.html[Chapter 8-6 テストのコーディング例]

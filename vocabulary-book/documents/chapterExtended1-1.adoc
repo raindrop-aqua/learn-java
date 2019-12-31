@@ -1,0 +1,29 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 8-1 （機能追加）サービスを Web に公開する
+
+=== 今回作成するアプリケーション
+
+====
+しばらくご連絡していませんでしたね。みんなに使ってもらっていく中で、要望が上がってきましたので依頼をさせていただきます。
+
+作っていただいたアプリは何人かで利用しているのですが、それぞれ登録した単語をみんなで共有したいんです。あと、アプリをみんなに配るのも大変なんですよね。
+ブラウザで単語帳アプリが使えるといいです。
+====
+
+=== 次のセクションでは…
+
+Spring Framework の説明を行います。
+
+* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
+
+=== リンク
+
+* link:chapter8-1.html[Chapter 8-1 （機能追加）サービスを Web に公開する]
+* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
+* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
+* link:chapter8-4.html[Chapter 8-4 コーディング例]
+* link:chapter8-5.html[Chapter 8-5 テストの修正]
+* link:chapter8-6.html[Chapter 8-6 テストのコーディング例]

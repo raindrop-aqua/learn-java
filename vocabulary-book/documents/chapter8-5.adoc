@@ -4,14 +4,40 @@
 
 == Chapter 8-5 テストの作成
 
+=== ライブラリの追加
+
+テストをすすめるためにはライブラリの追加が必要です。以下のライブラリをプロジェクトに追加してください。
+====
+* jsoup-1.12.1.jar
+====
+
 === Web のテスト
 
 Web のテストは自分が作成したアプリケーションを直接テストすることができません。
-間に Web サーバーや Java コンテナが存在するからです。
+間に Web サーバーや アプリケーションサーバーが存在するからです。
 
+そこで、ブラウザでアクセスするのと同様の方法でテストを行います。
+Javaからネットワークアクセスする方法はいくつかありますが、今回はWebページをかんたんに取得できる``jsoup``というライブラリを利用します。
 
+まずはGETメソッドを使って翻訳機能を呼び出してみましょう。
+connectメソッドにURLを指定し、dataメソッドにはパラメータを指定します。
+最後にgetメソッドを呼び出すことで、Webページを取得することができます。
 
+Webページを取得したら、結果が格納されている要素を取得します。
+結果が格納されている要素にはID属性を指定してありますので、ID属性を利用して要素を取得します。
 
+[source,java,indent=0]
+----
+include::../projects/chapter8/src/test/java/com/example/vocabularybook/chapter8/hints/TestHint1.java[lines=13..18]
+----
+
+次にPOSTメソッドを使って、単語の登録を行ってみます。
+パラメータが2つ必要なので、忘れずに設定します。
+
+[source,java,indent=0]
+----
+include::../projects/chapter8/src/test/java/com/example/vocabularybook/chapter8/hints/TestHint1.java[lines=26..32]
+----
 
 
 === 次のセクションでは…

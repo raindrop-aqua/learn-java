@@ -1,0 +1,61 @@
+:toc: left
+:source-highlighter: coderay
+:experimental:
+
+== Chapter 6-3 コーディングのヒント
+
+=== Spring Bean
+
+Spring Framework によって管理されるクラスのことを Bean と呼びます。
+Path という String 型のメンバ変数（プロパティ）を持つクラスを宣言します。
+
+[source,java]
+----
+include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/hints/Hint1.java[]
+----
+
+=== applicationContext.xml（設定ファイル）
+
+クラスを Bean として宣言し、設定ファイル中で自由に利用することができます。
+
+[source,xml]
+.applicationContext.xml
+----
+include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/hints/applicationContext.xml[]
+----
+
+(1) 前述の Hint1 クラスを hintBean1 として Spring Framework に登録・宣言します。
+プロパティにも代入しておきます。
+
+(2) Hint1 クラスを Hint2 クラスのプロパティに代入します。
+
+=== Spring Bean を利用する
+
+設定ファイルで宣言したファイルを利用してみましょう。
+
+[source,java]
+----
+include::../projects/chapter6/src/main/java/com/example/vocabularybook/chapter6/hints/Hint2.java[]
+----
+<1> 設定ファイルを読み込みます。
+<2> 設定ファイル内で宣言されている Bean のインスタンスを取得します。
+<3> 上記で取得したインスタンスの関数（メソッド）を実行します
+
+=== ライブラリの追加
+Spring Framework を利用するためには、ライブラリの追加が必要です。教材格納場所から jar ファイルをダウンロードし、Eclipse に追加してください。
+
+=== 次のセクションでは…
+
+次のセクションでは、コーディング例を示します。
+自分がコーディングした内容と比較してみましょう。
+
+* link:chapter6-4.html[Chapter 6-4 コーディング例]
+
+== リンク
+
+* link:chapter8-1.html[Chapter 8-1 （機能追加）サービスを Web に公開する]
+* link:chapter8-2.html[Chapter 8-2 Web の基礎知識]
+* link:chapter8-3.html[Chapter 8-3 コーディングのヒント]
+* link:chapter8-4.html[Chapter 8-4 コーディング例]
+* link:chapter8-5.html[Chapter 8-5 テストの修正]
+* link:chapter8-6.html[Chapter 8-6 テストのコーディング例]

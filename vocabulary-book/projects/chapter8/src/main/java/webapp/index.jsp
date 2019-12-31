@@ -11,7 +11,7 @@
     <input type="text" name="word" id="word" value="${word}">
     <input type="submit" value="翻訳">
 
-    <div>${result}</div>
+    <div id="result">${result}</div>
 </form>
 <a href="management.jsp">単語の登録・削除</a>
 </body>

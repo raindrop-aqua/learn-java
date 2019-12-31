@@ -4,17 +4,21 @@
 
 == Chapter 8-6 テストコーディング例
 
-=== ロジック層のテスト
+=== Webのテスト
 
-.TranslateLogicTest.java
-[source,java,indent=0]
+.VocabularyBookTest.java
+[source,java]
 ----
-include::../projects/chapter6/src/test/java/com/example/vocabularybook/chapter6/logic/TranslateLogicTest.java[]
+include::../projects/chapter8/src/test/java/com/example/vocabularybook/chapter8/handler/VocabularyBookTest.java[]
 ----
+
+<1> ``#``を``CSSセレクタ``といいます。ID属性を利用して要素を取得できます。
+<2> 単語が削除されたあとに翻訳を行った結果を確認します。
 
 === 次のチャプターでは…
 
-
+今回のチャプターでは今まで作ってきた単語帳アプリを外部に公開することができました。
+Webクライアントはブラウザを利用したわけですが、次の回では、Javaとは異なる言語(C#)から単語帳アプリを利用できるようにしましょう。
 
 * link:chapterEx1.html[Chapter Extended 1 C#(Windows Forms)からサービスを利用する]
 
