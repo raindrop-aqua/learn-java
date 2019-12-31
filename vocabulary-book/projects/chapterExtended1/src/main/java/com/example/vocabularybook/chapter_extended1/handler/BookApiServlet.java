@@ -28,6 +28,7 @@ public class BookApiServlet extends HttpServlet {
              OutputStream os = resp.getOutputStream();
              TIOStreamTransport transport = new TIOStreamTransport(is, os)) {
 
+
             TBinaryProtocol protocol = new TBinaryProtocol(transport, true, true);
 
             // 通信を開始します<4>

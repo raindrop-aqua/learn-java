@@ -1,8 +1,8 @@
 package com.example.vocabularybook.chapter_extended1.handler;
 
-import com.example.vocabularybook.chapter8.dto.TranslateLogicInDTO;
-import com.example.vocabularybook.chapter8.dto.TranslateLogicOutDTO;
-import com.example.vocabularybook.chapter8.logic.TranslateLogic;
+import com.example.vocabularybook.chapter_extended1.dto.TranslateLogicInDTO;
+import com.example.vocabularybook.chapter_extended1.dto.TranslateLogicOutDTO;
+import com.example.vocabularybook.chapter_extended1.logic.TranslateLogic;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
