@@ -58,3 +58,5 @@ asciidoctor -r asciidoctor-diagram -o build/chapterExtended1-2.html chapterExten
 asciidoctor -r asciidoctor-diagram -o build/chapterExtended1-3.html chapterExtended1-3.adoc
 asciidoctor -r asciidoctor-diagram -o build/chapterExtended1-4.html chapterExtended1-4.adoc
 asciidoctor -r asciidoctor-diagram -o build/chapterExtended1-5.html chapterExtended1-5.adoc
+
+cp -R image/ build/image/

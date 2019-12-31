@@ -4,10 +4,36 @@
 
 == Chapter Extended 1-5 クライアント側コーディング例]
 
+=== プロジェクトの作成
 
+Visual Studio を起動し、Windows Forms の新規プロジェクトを作成して下さい。
+また、System.Web も参照に加えて下さい。
 
+=== ライブラリの追加
 
+ホームページからlink:https://thrift.apache.org/download[ダウンロード]アーカイブをダウンロードし、
+lib/csharp/src の内容をプロジェクトにコピーします。
+その際、ディレクトリはThriftとして下さい。
+また、propertiesフォルダ、csproj, sln ファイルは削除しておいて下さい。
 
+=== 画面の設計
+
+以下のように、画面にコントロールを配置します。
+
+image::image/chapter-extended-client01.png[]
+image::image/chapter-extended-client02.png[]
+image::image/chapter-extended-client03.png[]
+
+=== 各ボタンイベントのコーディング
+
+翻訳、登録、削除ボタンを押下したときのイベントをコーディングします。
+IDLを利用して定義したサービスを呼び出すようにします。
+
+[source,c++]
+.Form1.cs
+----
+include::../projects/chapterExtended1-client/WindowsFormsApp1/Form1.cs[]
+----
 
 === End of contents
 
