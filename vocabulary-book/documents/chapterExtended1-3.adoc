@@ -35,7 +35,7 @@ macOSはbrewなどで手に入れることができます。
 [source]
 .build.sh
 ----
-include::../projects/chapterExtended1/src/idl/build.sh[lines=4]
+include::../projects/chapterExtended1/src/idl/build.sh[]
 ----
 
 === 次のセクションでは…

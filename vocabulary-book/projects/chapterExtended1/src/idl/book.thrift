@@ -1,5 +1,6 @@
 namespace java com.example.vocabularybook.chapter_extended1.thrift
 namespace netstd com.example.vocabularybook.chapter_extended1.thrift
+namespace csharp com.example.vocabularybook.chapter_extended1.thrift
 
 /**
  * 単語帳サービス
